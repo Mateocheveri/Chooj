@@ -19,10 +19,19 @@
        
 </head>
 
+
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dddddd;
+}
+
+</style>
+
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
-    <nav class="navbar navbar-expand-lg navbar-dark px-4">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg navbar-dark border  px-4">
+        <a class="navbar-brand" href="../index.html">
           <img
             src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true"
             width="200px"
@@ -55,6 +64,71 @@
           <a class="nav-link" href="./vistas/registro.html"><button class="btn btn-outline-light">Registro</button></a>
         </div>
   </nav>
+
+
+  <div class="container mt-4">
+    <div class="row">
+        <!-- Barra lateral -->
+        <div class="col-md-3">
+            <ul class="list-group">
+                <li class="list-group-item">Inicio</li>
+                <li class="list-group-item">Estudiantes</li>
+                <li class="list-group-item">Profesores</li>
+                <li class="list-group-item">Módulos</li>
+                <li class="list-group-item">Reportes</li>
+            </ul>
+        </div>
+        
+        <!-- Contenido principal -->
+        <div class="col-md-6">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Buscar">
+                <button class="btn btn-primary">🔍</button>
+            </div>
+            
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Curso 1</h5>
+                    <p class="card-text">Descripción breve.</p>
+                    <span>⭐⭐⭐⭐⭐</span>
+                </div>
+            </div>
+            
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Curso 2</h5>
+                    <p class="card-text">Descripción breve.</p>
+                    <span>⭐⭐⭐⭐</span>
+                </div>
+
+                
+          
+
+
+            </div>
+            <div class="card mb-3">
+              <div class="card-body">
+                  <h5 class="card-title">Curso 3</h5>
+                  <p class="card-text">Descripción breve.</p>
+                  <span>⭐⭐⭐⭐</span>
+              </div>
+          </div>
+            
+        </div>
+
+        
+        
+        <!-- Sección de descargas -->
+        <div class="col-md-3">
+            <h5>Recursos de Descarga</h5>
+            <div class="d-grid gap-2">
+                <button class="btn btn-secondary">Descargar 1</button>
+                <button class="btn btn-secondary">Descargar 2</button>
+                <button class="btn btn-secondary">Descargar 3</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 

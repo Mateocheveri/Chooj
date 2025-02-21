@@ -66,13 +66,13 @@ body{
     padding: 20px;
 }
   
-.row {
+.rows {
     display: flex;
     flex-wrap: wrap; /* Permite que las tarjetas se acomoden en filas según el espacio disponible */
     gap: 20px; /* Espaciado entre las tarjetas */
 }
   
-.col-md-3 {
+.colum {
     flex: 1 1 22%; /* Esto permite que cada tarjeta ocupe aproximadamente el 22% del ancho, adaptándose al contenedor */
     box-sizing: border-box;
 }

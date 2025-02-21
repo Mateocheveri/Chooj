@@ -61,62 +61,83 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 } */
-.container{
-    display: flex;
+.contenedor {
+    width: 100%;
+    padding: 20px;
 }
+  
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se acomoden en filas según el espacio disponible */
+    gap: 20px; /* Espaciado entre las tarjetas */
+}
+  
+.col-md-3 {
+    flex: 1 1 22%; /* Esto permite que cada tarjeta ocupe aproximadamente el 22% del ancho, adaptándose al contenedor */
+    box-sizing: border-box;
+}
+  
 .card1 {
+    position: relative; /* Necesario para posicionar el contenido al interior */
     height: 500px;
-    margin: 50px;
     box-shadow: 5px 5px 20px black;
     overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out; /* Animación general de la tarjeta */
 }
-#img{
-    height: 500px;
-    width: 350px;
-    border-radius: 3px;
+  
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
-
-.intro{
-    height: 200px;
-    width: 350px;
-    padding: 6px;
-    box-sizing: border-box;
+  
+.intro {
     position: absolute;
-    bottom: 240px;
-    background: rgba(27, 27, 27, .5);
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    background: rgba(27, 27, 27, 0.7);
     color: white;
-    transition: .5s;
-}
-#title{
-    margin: 10px;
-    font-size: 40px;
-}
-#text{
-    font-size: 20px;
-    margin: 20px;
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
 }
-span{
-    font-weight: bold;
-}
-.card1:hover{
-    cursor: pointer;
-}
-.card1:hover .intro{
-    height: 220px;
-    bottom: 240px;
-    background: black;
-}
-.card1:hover p{
+  
+.card1:hover .intro {
     opacity: 1;
     visibility: visible;
 }
-.card1:hover img{
-    transform: scale(1.1) rotate(-3deg);
+  
+#title {
+    font-size: 24px;
+    margin: 10px 0;
 }
-
-
+  
+#text {
+    font-size: 16px;
+    margin: 10px 0;
+}
+  
+.card1:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* Le da un pequeño efecto de desplazamiento hacia arriba */
+}
+  
+.card1:hover img {
+    transform: scale(1.05); /* Aumenta ligeramente la imagen */
+}
+  
+.card1:hover .intro {
+    background: rgba(0, 0, 0, 0.9);
+}
+  
+.card1:hover p {
+    visibility: visible;
+    opacity: 1;
+}
 
 
 

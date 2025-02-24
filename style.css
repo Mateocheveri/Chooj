@@ -13,6 +13,8 @@ body{
     background-color: #000000;
 }
 
+
+
 .hero {
     background-image: url('https://source.unsplash.com/1600x400/?abstract');
     background-size: cover;
@@ -61,6 +63,13 @@ body{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 } */
+
+
+
+/*  */
+
+
+
 .contenedor {
     width: 100%;
     padding: 20px;
@@ -68,22 +77,22 @@ body{
   
 .rows {
     display: flex;
-    flex-wrap: wrap; /* Permite que las tarjetas se acomoden en filas según el espacio disponible */
-    gap: 20px; /* Espaciado entre las tarjetas */
+    flex-wrap: wrap; 
+    gap: 20px; 
 }
   
 .colum {
-    flex: 1 1 22%; /* Esto permite que cada tarjeta ocupe aproximadamente el 22% del ancho, adaptándose al contenedor */
+    flex: 1 1 22%; 
     box-sizing: border-box;
 }
   
 .card1 {
-    position: relative; /* Necesario para posicionar el contenido al interior */
+    position: relative; 
     height: 500px;
     box-shadow: 5px 5px 20px black;
     overflow: hidden;
     border-radius: 10px;
-    transition: transform 0.3s ease-in-out; /* Animación general de la tarjeta */
+    transition: transform 0.3s ease-in-out; 
 }
   
 .card-img {
@@ -123,11 +132,11 @@ body{
   
 .card1:hover {
     cursor: pointer;
-    transform: translateY(-10px); /* Le da un pequeño efecto de desplazamiento hacia arriba */
+    transform: translateY(-10px); 
 }
   
 .card1:hover img {
-    transform: scale(1.05); /* Aumenta ligeramente la imagen */
+    transform: scale(1.05); 
 }
   
 .card1:hover .intro {
@@ -141,7 +150,7 @@ body{
 
 
 
-
+/*  */
 
 
 

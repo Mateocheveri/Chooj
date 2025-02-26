@@ -15,7 +15,9 @@
   <link rel="stylesheet" href="../style.css">
     <!-- animate.css -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+  
+  <!-- stars -->
+   <link rel="stylesheet" href="../css/dashboard.css">
        
 </head>
 
@@ -30,7 +32,7 @@
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
-    <nav class="navbar navbar-expand-lg navbar-dark border  px-4">
+    <nav class="navbar navbar-expand-lg navbar-dark border px-4 ">
         <a class="navbar-brand" href="../index.html">
           <img
             src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true"
@@ -67,16 +69,14 @@
 
  <!-- info dashboard -->
  <div
- class="container-fluid mt-4 mx-auto p-3 column-gap-3 flex-wrap"
->
- <div class="ejemplo d-flex">
-   <div class="contenedor2 col-3">
-     <div class="row d-flex">
+ class="container-fluid mt-4 mx-auto p-3 column-gap-3 flex-wrap ">
+ <div class="ejemplo d-flex  ">
+   <div class="contenedor2 col-3 d-flex ">
+     
        <!-- Barra lateral -->
        <div
-         class="col-md-10 col-sm-12 bg-dark-subtle px-5 mx-auto rounded-3 mx-2"
-       >
-         <ul class="list-group my-2">
+         class="col-md-11 col-sm-12 bg-dark-subtle px-2 mx-auto rounded-3 mx-2  ">
+         <ul class="list-group my-2  ">
            <li class="list-group-item">Inicio</li>
            <li class="list-group-item">Estudiantes</li>
            <li class="list-group-item">Profesores</li>
@@ -85,21 +85,21 @@
          </ul>
        </div>
      </div>
-   </div>
+   
 
    <!-- Contenido principal -->
 
    <div
-     class="nuevocontenedor col-6  d-flex flex-wrap"
-   >
-     .
-     <div class="col-md-8 border bg-dark-subtle rounded-3 m-auto p-3">
+     class="nuevocontenedor col-6  d-flex flex-wrap  "
+>
+     
+     <div class="col-md-12 bg-dark-subtle rounded-3 m-auto p-2">
        <div class="input-group mb-3">
-         <input type="text" class="form-control" placeholder="Buscar" />
+         <input type="text" class="form-control " placeholder="Buscar" />
          <button class="btn btn-primary">🔍</button>
        </div>
 
-       <div class="card mb-3">
+       <div class="card mb-3 ">
          <div class="card-body">
            <h5 class="card-title">MÓDULO:ESTILOS</h5>
            <p class="card-text">Descripción breve.</p>
@@ -113,7 +113,20 @@
            >
              <div class="progress-bar" style="width: 25%">25%</div>
            </div>
-           <span>⭐⭐⭐⭐⭐</span>
+           <div class="puntaje">
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio">
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio">
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="">
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio">
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio">
+              <label title="text" for="star1"></label>
+            </div>
+           </div>
          </div>
        </div>
 
@@ -131,7 +144,20 @@
            >
              <div class="progress-bar" style="width: 0%">0%</div>
            </div>
-           <span>⭐⭐⭐⭐</span>
+           <div class="puntaje">
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio">
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio">
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="">
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio">
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio">
+              <label title="text" for="star1"></label>
+            </div>
+           </div>
          </div>
        </div>
        <div class="card mb-3">
@@ -148,13 +174,26 @@
            >
              <div class="progress-bar" style="width: 5%">5%</div>
            </div>
-           <span>⭐⭐⭐⭐</span>
+           <div class="puntaje">
+            <div class="rating">
+              <input value="5" name="rate" id="star5" type="radio">
+              <label title="text" for="star5"></label>
+              <input value="4" name="rate" id="star4" type="radio">
+              <label title="text" for="star4"></label>
+              <input value="3" name="rate" id="star3" type="radio" checked="">
+              <label title="text" for="star3"></label>
+              <input value="2" name="rate" id="star2" type="radio">
+              <label title="text" for="star2"></label>
+              <input value="1" name="rate" id="star1" type="radio">
+              <label title="text" for="star1"></label>
+            </div>
+           </div>
          </div>
        </div>
      </div>
 
      <!-- Sección de descargas -->
-     <div class="col-md-8 rounded-3 m-auto px-3 bg-dark-subtle">
+     <div class="col-md-12 rounded-3 m-auto px-3 bg-dark-subtle">
        <h5>Recursos de Descarga</h5>
        <div class="d-grid gap-2">
          <button class="btn btn-secondary">Descargar 1</button>
@@ -163,6 +202,24 @@
        </div>
      </div>
    </div>
+
+
+   <div class="contenedor2 col-3 d-flex ">
+    <!-- Barra lateral -->
+    <div
+    class="col-md-11 col-sm-12 bg-dark-subtle px-2 mx-auto rounded-3 mx-2 border ">
+    <ul class="list-group my-2  ">
+      <li class="list-group-item">CONFIGURACIONES</li>
+      <li class="list-group-item">CERTIFICADOS</li>
+      <li class="list-group-item">FAVORITOS</li>
+      <li class="list-group-item">CONTACTO</li>
+      
+    </ul>
+  </div>
+</div>
+
+
+
  </div>
 </div>
 

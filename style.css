@@ -64,7 +64,30 @@ body{
     border-top-right-radius: 10px;
 } */
 
-
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.module-grid {
+    background-color: #000033;
+    color: white;
+    padding: 2rem 0;
+}
+.module-grid h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.module-card {
+    background: linear-gradient(to bottom, #ffffff, #0000ff);
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
 
 /*  */
 

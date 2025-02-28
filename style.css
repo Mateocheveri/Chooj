@@ -264,6 +264,12 @@ blockquote p {
     transform: scaleX(-1)
 }
 
+.fa-circle-user{
+    font-size: 30px;
+    margin: 20px;
+    color: #ffffff;
+}
+
 footer {
     background: #1a1a1a;
     color: white;

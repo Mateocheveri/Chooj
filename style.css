@@ -307,11 +307,12 @@ blockquote p {
 } */
 
 .carousel-item img {
-    height: 500px;
+    height: 100vh;
     object-fit: cover;
     width: 100%;
     background-attachment: fixed;
     background-size: cover;
+    transform: scaleX(0.95) ;
 }
 .module-grid {
     background-color: #000033;

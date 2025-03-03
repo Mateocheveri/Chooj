@@ -5,6 +5,7 @@ html {
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
+    font-size: 18px;
     /*  background-color: #000000;  */
 }
 
@@ -312,7 +313,7 @@ blockquote p {
     width: 100%;
     background-attachment: fixed;
     background-size: cover;
-    transform: scaleX(0.95) ;
+    
 }
 .module-grid {
     background-color: #000033;

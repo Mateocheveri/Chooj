@@ -67,8 +67,9 @@ body{
 .carousel-item img {
     height: 500px;
     object-fit: cover;
-    width: 100%;
-    background-attachment: fixed;
+    width: 50%;
+    border: 2px solid red;
+    /* background-attachment: fixed; */
     background-size: cover;
 }
 .module-grid {
@@ -310,8 +311,8 @@ blockquote p {
 } */
 
 .carousel-item img {
-    height: 100vh;
-    object-fit: cover;
+    height: 90vh;
+    object-fit: contain;
     width: 100%;
     background-attachment: fixed;
     background-size: cover;

@@ -1,49 +1,10 @@
 
-*{
-    box-sizing: border-box;
-}
 
-.rating:not(:checked) > input {
-    position: absolute;
-    appearance: none;
-  }
-  
-  .rating:not(:checked) > label {
-    float: right;
-    cursor: pointer;
-    font-size: 30px;
-    color: #666;
-  }
-  
-  .rating:not(:checked) > label:before {
-    content: '★';
-  }
-  
-  .rating > input:checked + label:hover,
-  .rating > input:checked + label:hover ~ label,
-  .rating > input:checked ~ label:hover,
-  .rating > input:checked ~ label:hover ~ label,
-  .rating > label:hover ~ input:checked ~ label {
-    color: #e58e09;
-  }
-  
-  .rating:not(:checked) > label:hover,
-  .rating:not(:checked) > label:hover ~ label {
-    color: #ff9e0b;
-  }
-  
-  .rating > input:checked ~ label {
-    color: #ffa723;
-  }
-  
-  
-  html {
-    scroll-behavior: smooth; /* Activa el desplazamiento suave para ir del menu a las secciones*/
-}
 *{
     margin: 0px;
     padding: 0px;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
     /*  background-color: #000000;  */
 }
 
@@ -125,7 +86,49 @@
     color: white;
 }
 
-/*  */
+/*stars */
+
+
+.rating:not(:checked) > input {
+    position: absolute;
+    appearance: none;
+  }
+  
+  .rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+    color: #666;
+  }
+  
+  .rating:not(:checked) > label:before {
+    content: '★';
+  }
+  
+  .rating > input:checked + label:hover,
+  .rating > input:checked + label:hover ~ label,
+  .rating > input:checked ~ label:hover,
+  .rating > input:checked ~ label:hover ~ label,
+  .rating > label:hover ~ input:checked ~ label {
+    color: #e58e09;
+  }
+  
+  .rating:not(:checked) > label:hover,
+  .rating:not(:checked) > label:hover ~ label {
+    color: #ff9e0b;
+  }
+  
+  .rating > input:checked ~ label {
+    color: #ffa723;
+  }
+  
+  
+  html {
+    scroll-behavior: smooth; /* Activa el desplazamiento suave para ir del menu a las secciones*/
+}
+
+
+/* section */
 
 .list-group-item a{
     color: black;

@@ -41,6 +41,10 @@
   
 }
 
+.contenedor2{
+  border: 5px solid purple;
+}
+
 </style>
 
 
@@ -101,20 +105,18 @@
 
 
  <!-- info dashboard -->
- <div
- class="container-fluid mt-4 mx-auto p-3 column-gap-3 flex-wrap ">
- <div class="ejemplo d-flex  ">
-   <div class="contenedor2 col-3 d-flex ">
+ <div class="container-fluid mx-auto p-3 column-gap-2  flex-wrap    ">
+ <div class="ejemplo d-flex col-lg-11 col-sm-12 col-md-12 flex-wrap m-auto border border-info  ">
+   <div class=" col-lg-3 d-flex my-2   " >
      
        <!-- Barra lateral -->
-       <div
-         class="col-md-11 col-sm-12 bg-dark-subtle px-2 mx-auto rounded-3 mx-2  ">
-         <ul class="list-group my-2  ">
-           <li class="list-group-item "><a href="../index.html">Inicio </a></li>
+       <div class=" col-lg-12   m-auto rounded-3  " >
+         <ul class="  col-lg-12   list-group  bg-dark-subtle p-2 " >
+           <li class="list-group-item  "><a href="../index.html">Inicio </a></li>
            <li class="list-group-item">Estudiantes</li>
            <li class="list-group-item">Profesores</li>
 
-           <li class="nav-item dropdown">  
+           <li class="nav-item dropdown ">  
            <li class="list-group-item"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Modulos
           </a> 
@@ -137,10 +139,10 @@
    <!-- Contenido principal -->
 
    <div
-     class="nuevocontenedor col-6 gap-2 d-flex flex-wrap  "
+     class="nuevocontenedor col-sm-12 col-md-12 col-lg-6 gap-2 d-flex flex-wrap  "
 >
      
-     <div class="col-md-12 bg-dark-subtle rounded-3 m-auto p-2">
+     <div class="col-md-12 col-sm-12  bg-dark-subtle rounded-3 m-auto p-2 my-2  ">
        <div class="input-group mb-3">
          <input type="text" class="form-control " placeholder="Buscar" />
          <button class="btn btn-primary">🔍</button>
@@ -315,10 +317,10 @@
    </div>
 
 
-   <div class="contenedor2 col-3 d-flex ">
+   <div class=" col-sm-12 col-lg-3 col-md-12 col-sm-12 my-2   d-flex ">
     <!-- Barra lateral -->
     <div
-    class="col-md-11 col-sm-12 bg-dark-subtle px-2 mx-auto rounded-3 mx-2 border ">
+    class="col-md-11 col-sm-12  bg-dark-subtle px-2 mx-auto rounded-3  mx-2 border ">
     <ul class="list-group my-2  ">
       <li class="list-group-item">CONFIGURACIONES</li>
       <li class="list-group-item">CERTIFICADOS</li>
@@ -328,13 +330,14 @@
     </ul>
 
     <!-- Sección de descargas -->
-  <div class="col-md-12 rounded-3 m-auto px-2 my-4 bg-dark-subtle mb-4 pb-4 m-auto text-center  ">
+  <div class="col-md-12 rounded-3 col-sm-12 col-md-12 m-auto px-2 my-4 bg-dark-subtle mb-4 pb-4 m-auto text-center    ">
     <h5>Recursos de Descarga</h5>
-    <div class="d-grid gap-2">
-      <div class="row text-center m-auto  gap-2 ">
-      <button class="btn col-5 fs-9 border border-info mx-1 btn-secondary">Módulo Estilo</button>
-      <button class="btn col-5 fs-9 border border-info mx-1 btn-secondary">Módulo Guión</button>
-      <button class="btn col-5 fs-9 border border-info mx-1 btn-secondary">Módulo producción</button>
+    <div class="d-grid gap-2  m-auto ">
+      <div class="row text-center gap-2 justify-content-center ">
+      <button class="btn col-5 fs-9  mx-1 btn-secondary"> <span ><i class="fa-solid fa-folder-open mx-2"></i></span> Módulo Estilo</button>
+      <button class="btn col-5 fs-9  mx-1 btn-secondary"><span ><i class="fa-solid fa-folder-open mx-2"></i></span> Módulo Guión</button>
+      <button class="btn col-5 fs-9  mx-1 btn-secondary"> <span ><i class="fa-solid fa-folder-open mx-2"></i></span> Módulo producción</button>
+      <button class="btn col-5 fs-9  mx-1 btn-secondary"> <span ><i class="fa-solid fa-folder-open mx-2"></i></span> Módulo Edición</button>
     </div>
     </div>
   </div>

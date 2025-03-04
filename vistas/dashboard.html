@@ -19,6 +19,11 @@
   <!-- css dsboard -->
 
    <link rel="stylesheet" href="../css/dashboard.css">
+
+   <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+   crossorigin="anonymous" referrerpolicy="no-referrer" />
        
 </head>
 
@@ -26,7 +31,9 @@
 <style>
   body {
     font-family: 'Roboto', sans-serif;
-    background-color: #dddddd;
+    /* background-color: #dddddd; */
+    background: rgb(1,0,10);
+    background: radial-gradient(circle, rgba(1,0,10,1) 0%, rgba(0,0,23,1) 92%, rgba(0,4,5,1) 100%);
 }
 
 .image{
@@ -36,52 +43,61 @@
 
 </style>
 
+
+
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-    <a class="navbar-brand" href="#">
-      <img
-        src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true"
-        width="200px"
-        alt="logo-chooj"
-      /> 
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Modulos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="./vistas/estilos.html">Estilos</a></li>
-            <li><a class="dropdown-item" href="./vistas/guiones.html">guiones</a></li>
-            <li><a class="dropdown-item" href="./vistas/produccion.html">Produccion</a></li>
-            <li><a class="dropdown-item" href="./vistas/edicion.html">Edicion</a></li>
+  <nav class="navbar navbar-expand-lg navbar-dark px-4 ">
+        <a class="navbar-brand" href="../index.html">
+          <img
+            src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true"
+            width="200px"
+            alt="logo-chooj"
+          /> 
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto"> 
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Modulos
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
+                <li><a class="dropdown-item" href="../vistas/guiones.html">guiones</a></li>
+                <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
+                <li><a class="dropdown-item" href="../vistas/edicion.html">Edicion</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="./vistas/quienes-somos.html">Nosotros</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Certificación</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="./vistas/noticias.html">Blog</a></li>
           </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="./vistas/quienes-somos.html">Nosotros</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Certificación</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="./vistas/noticias.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#"></a></li>
-      </ul>
-      <a class="nav-link" href="./vistas/inicio-sesion.html"><button class="btn btn-outline-light mx-2">Ingrese</button></a>
-      <a class="nav-link" href="./vistas/registro.html"><button class="btn btn-outline-light">Registro</button></a>
-    </div>
-</nav>
+          <!--<a class="nav-link" href="./vistas/inicio-sesion.html"><button class="btn btn-outline-light mx-2">Ingrese</button></a>
+          <a class="nav-link" href="./vistas/registro.html"><button class="btn btn-outline-light">Registro</button></a> -->
+          <a class="nav-link" href="./vistas/inicio-sesion.html"><button class="btn btn-outline-light">cerrar sesion</button></a>
+          
+          <div class="iconos ">
+
+            <a href="../index.html">  <i class="fa-solid fa-circle-left text-light px-3 fs-2"></i></a>
+            <i class="fa-regular fa-circle-user mx-0 " ></i>
+          </div>
+          
+        </div>
+  </nav>
+
 
 
  <!-- info dashboard -->
@@ -94,10 +110,24 @@
        <div
          class="col-md-11 col-sm-12 bg-dark-subtle px-2 mx-auto rounded-3 mx-2  ">
          <ul class="list-group my-2  ">
-           <li class="list-group-item">Inicio</li>
+           <li class="list-group-item "><a href="../index.html">Inicio </a></li>
            <li class="list-group-item">Estudiantes</li>
            <li class="list-group-item">Profesores</li>
-           <li class="list-group-item">Módulos</li>
+
+           <li class="nav-item dropdown">  
+           <li class="list-group-item"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Modulos
+          </a> 
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
+            <li><a class="dropdown-item" href="../vistas/guiones.html">guiones</a></li>
+            <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
+            <li><a class="dropdown-item" href="../vistas/edicion.html">Edicion</a></li>
+          </ul>
+        </li>
+        </li>
+
+
            <li class="list-group-item">Reportes</li>
          </ul>
        </div>
@@ -107,7 +137,7 @@
    <!-- Contenido principal -->
 
    <div
-     class="nuevocontenedor col-6  d-flex flex-wrap  "
+     class="nuevocontenedor col-6 gap-2 d-flex flex-wrap  "
 >
      
      <div class="col-md-12 bg-dark-subtle rounded-3 m-auto p-2">
@@ -214,6 +244,7 @@
              role="progressbar"
              aria-label="Example with label"
              aria-valuenow="25"
+             
              aria-valuemin="0"
              aria-valuemax="100"
            >
@@ -246,7 +277,7 @@
             Facere dicta at voluptatem dolorum exercitationem.</p> 
 
           </div>
-           <div class="image-base col-lg-4 py-4 my-3 "> <img src="https://github.com/Mateocheveri/Chooj/blob/main/assets/FANTASMA1.png?raw=true" 
+           <div class="image-base col-lg-4 py-4 my-3  "> <img src="https://github.com/Mateocheveri/Chooj/blob/main/assets/FANTASMA1.png?raw=true" 
             class="image col-12 rounded bg-dark-subtle p-2 shadow" alt=""></div>
           </div>
           <div
@@ -257,7 +288,7 @@
             aria-valuemin="0"
             aria-valuemax="100"
           >
-            <div class="progress-bar" style="width: 0%">0%</div>
+            <div class="progress-bar " style="width: 0%">0%</div>
           </div>
           <div class="puntaje">
            <div class="rating">
@@ -281,7 +312,7 @@
      </div>
 
      <!-- Sección de descargas -->
-     <div class="col-md-12 rounded-3 m-auto px-3 bg-dark-subtle">
+     <div class="col-md-12 rounded-3 m-auto px-3 bg-dark-subtle mb-4 pb-4 border ">
        <h5>Recursos de Descarga</h5>
        <div class="d-grid gap-2">
          <button class="btn btn-secondary">Descargar 1</button>

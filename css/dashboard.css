@@ -1,3 +1,8 @@
+
+*{
+    box-sizing: border-box;
+}
+
 .rating:not(:checked) > input {
     position: absolute;
     appearance: none;
@@ -121,6 +126,12 @@
 }
 
 /*  */
+
+.list-group-item a{
+    color: black;
+    text-decoration: none;
+}
+
 
 
 

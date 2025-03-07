@@ -64,6 +64,18 @@ body{
     color: white;
 }
 
+.cta{ 
+    border: 2px solid rgba(255, 255, 255, 0.377);
+}
+
+.cta:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(336deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color:white;
+    transition: ease-in 200ms;
+}
+
+
 /* CARDS */
 
 .contenedor {

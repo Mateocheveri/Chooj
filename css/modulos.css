@@ -43,7 +43,7 @@ background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(48,48,48,1) 46%, rgb
 }
 
 .card:hover{
-  border: 2px solid green;
+  border: 2px solid rgb(73, 73, 73);
   /* transform: scale(1.05,1.05); */
 }
 

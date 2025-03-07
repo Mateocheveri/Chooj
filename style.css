@@ -39,7 +39,7 @@ body{
 /*CAROUSEL*/
 
 .carousel-item img {
-    height: 90vh;
+    height: 60vh;
     object-fit: contain;
     width: 100%;
     background-attachment: fixed;

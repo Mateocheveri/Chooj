@@ -1,5 +1,5 @@
-/*
-inicia comentario
+
+//inicia comentario
 
 const btnstar = document.getElementById('btnstar');
 const btnregistro = document.getElementById('btnregistro');
@@ -27,13 +27,13 @@ buscador.addEventListener('submit',busque)
 
 
 
-/* saludar a el usuario 
+//saludar a el usuario 
 
 function saludo(){
     const saludo = document.querySelector('#saludo');
     let nombreUser = JSON.parse( localStorage.getItem ('user') );
     if(nombreUser){
-        saludo.innerHTML = `bienvenido ${nombreUser.userName}✔✔`
+        saludo.innerHTML = `${nombreUser.userName}`
     }
     else{
         saludo.innerHTML = '';
@@ -66,20 +66,3 @@ modulos.forEach( element => {
     `
     container.appendChild(box)
 }) 
-*/
-
-var owl = $('.owl-carousel');
-owl.owlCarousel({
-    items:4,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:1000,
-    autoplayHoverPause:true
-});
-$('.play').on('click',function(){
-    owl.trigger('play.owl.autoplay',[1000])
-}) 
-$('.stop').on('click',function(){
-    owl.trigger('stop.owl.autoplay')
-})

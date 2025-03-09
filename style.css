@@ -29,8 +29,9 @@ body{
 }
 
 .fa-circle-user{
-    font-size: 30px;
-    margin: 30px;
+    font-size: 33px;
+    padding-left: 10px;
+    padding-bottom: 28px;
     color: #ffffff;
 }
 

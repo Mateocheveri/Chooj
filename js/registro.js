@@ -13,7 +13,7 @@ function registrarUser(e){
     localStorage.setItem('user', JSON.stringify(user) ) 
 
     form.reset()
-    window.location = "../vistas/iniciosesion.html"
+    window.location = "../vistas/inicio-sesion.html"
 }
 
 form.addEventListener('submit',registrarUser)

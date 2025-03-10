@@ -29,8 +29,9 @@ body{
 }
 
 .fa-circle-user{
-    font-size: 30px;
-    margin: 30px;
+    font-size: 33px;
+    padding-left: 10px;
+    padding-bottom: 28px;
     color: #ffffff;
 }
 
@@ -39,7 +40,7 @@ body{
 /*CAROUSEL*/
 
 .carousel-item img {
-    height: 60vh;
+    height: 80vh;
     object-fit: contain;
     width: 100%;
     background-attachment: fixed;
@@ -63,6 +64,18 @@ body{
     text-align: center;
     color: white;
 }
+
+.cta{ 
+    border: 2px solid rgba(255, 255, 255, 0.377);
+}
+
+.cta:hover{
+    background: rgb(2,0,36);
+    background: linear-gradient(336deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+    color:white;
+    transition: ease-in 200ms;
+}
+
 
 /* CARDS */
 

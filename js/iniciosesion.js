@@ -12,7 +12,7 @@ function usuarioValido(e){
     console.log(Boolean(contraseña.value === currentUser.userPass));
 
     if(usuario.value === currentUser.userName && contraseña.value === currentUser.userPass){
-        window.location = "../index.html"
+        window.location = "../vistas/dashboard.html"
     }
     else{
         console.log('volver a intentar')

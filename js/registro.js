@@ -9,10 +9,21 @@ function registrarUser(e){
         userName: usuario.value,
         userPass: contraseña.value,
         
+        userLogged: false
     }
 
-    localStorage.setItem('user', JSON.stringify(user) ) 
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
 
+    for (let i = 0; i < usuarios.length; i++) {
+        if (usuario.value === usuarios[i].userName){
+            alert("el ususario ya esta registrado 💥")
+            return
+        }      
+    }
+
+    usuarios.push(user)
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios)) 
     form.reset()
     window.location = "../vistas/inicio-sesion.html"
 }

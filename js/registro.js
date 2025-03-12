@@ -8,6 +8,7 @@ function registrarUser(e){
     let user = {
         userName: usuario.value,
         userPass: contraseña.value,
+        
     }
 
     localStorage.setItem('user', JSON.stringify(user) ) 

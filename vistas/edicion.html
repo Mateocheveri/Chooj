@@ -9,65 +9,77 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/modulos.css">
     <!-- animate.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
+    integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+      <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+  integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
     
        
 </head>
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="70" tabindex="0">
 
-  <nav class="navbar navbar-expand-lg navbar-dark px-4">
+  <nav class="navbar navbar-expand-lg  px-4  ">
     <a class="navbar-brand" href="../index.html">
-      <img
-        src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true"
-        width="200px"
-        alt="logo-chooj"
-      /> 
+        <img src="https://github.com/Sektor30/chooj-design/blob/main/assets/CHOOJ-header.png?raw=true" width="200px" alt="logo-chooj"/>
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto"> 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Modulos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
-            <li><a class="dropdown-item" href="../vistas/guiones.html">guiones</a></li>
-            <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
-            <li><a class="dropdown-item" href="../vistas/edicion.html">Edicion</a></li>
-          </ul>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="../vistas/quienes-somos.html">Nosotros</a></li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Certificación</a>
-        </li>
-        <li class="nav-item"><a class="nav-link" href="../vistas/noticias.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link" href="#"></a></li>
-      </ul>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          <i class="fa-regular fa-circle-user "></i>
-        </a>
-        <ul class="dropdown-menu ">
-          <li><a class="dropdown-item" href="./vistas/dashboard.html">Dashboard</a></li>
-          <li><a class="dropdown-item" href="./cerrando.html">
-            <button class="btn btn-outline-info">cerrar
-          sesion</button></a></li>
-        </ul>
-      </li>
-    </div>
-  </nav>
 
+    <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav ms-auto p-0 fs-5">
+            <li class="nav-item">
+                <a class="nav-link" href="../vistas/quienes-somos.html">Nosotros</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Certificación</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../vistas/noticias.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <!-- Botón para abrir el offcanvas -->
+                <a class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">
+                    <i class="fa-regular fa-circle-user fs-1 m-0 px-3"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Offcanvas (sidebar para la info del usuario) -->
+<div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasUserLabel">Información del Usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body ">
+        <p><strong>Nombre:</strong> Usuario Ejemplo</p>
+        <p><strong>Email:</strong> usuario@example.com</p>
+        <hr>
+        <a href="../vistas/dashboard.html" class="btn btn-primary w-100 mb-2">Dashboard</a>
+        <a href="./cerrando.html" class="btn btn-outline-danger w-100">Cerrar sesión</a>
+
+        <div class="mod">
+        <div class="nav-item dropdown py-4">
+            <a class="nav-link dropdown-toggle text-center border border-dark" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Modulos
+            </a>
+            <div class="dropdown-menu ">
+              <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
+              <li><a class="dropdown-item" href="../vistas/guiones.html">Guiones</a></li>
+              <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
+              <li><a class="dropdown-item" href="../vistas/edicion.html">Edicion</a></li>
+            </div>
+          </div> 
+        </div>
+    </div>
+    
+</div>
  
     
     <main class="bg-dark">

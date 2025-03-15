@@ -11,6 +11,10 @@
   
 }
 
+.navbar {
+  background-color: #000033;
+}
+
 #inicio{
 
   background-color: #1a1a1a;
@@ -160,4 +164,25 @@ footer {
 .social-icons a {
   margin: 0 0.5rem;
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 994px){
+  .navbar-collapse{
+    text-align: center;
+    
+  }
+}
+@media screen and (max-width: 315px){
+
+  .navbar-brand img{
+    width: 100%;
+  }
+
+  .navbar-toggler{
+    width: 100%;
+  }
+  
+  .fa-bars{
+    align-items: center;
+  }
 }

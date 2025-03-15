@@ -538,9 +538,10 @@ color: #1dc3dd;
 font-size: 30px;
 }
   
-@media screen (max-width: 570px) {
+@media screen and (max-width: 570px) {
     .info-student{
-        border:4px solid green;
+     
+        width: 100%;
     }
         
 

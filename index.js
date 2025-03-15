@@ -1,3 +1,7 @@
+/* 
+pseudocodigo
+
+*/
 
 //inicia comentario
 
@@ -9,7 +13,7 @@ const busqueda = document.querySelector('#busqueda')
 const buscador = document.querySelector('#buscador')
 
 
-function busque(e){
+/* function busque(e){
    e.preventDefault();
    console.log(videos)
 
@@ -22,10 +26,6 @@ function busque(e){
 }
 
 buscador.addEventListener('submit',busque)
-
-
-
-
 
 //saludar a el usuario 
 
@@ -66,3 +66,4 @@ modulos.forEach( element => {
     `
     container.appendChild(box)
 }) 
+ */

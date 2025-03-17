@@ -53,6 +53,8 @@ background: linear-gradient(0deg, rgba(13,13,13,1) 0%, rgba(48,48,48,1) 46%, rgb
 
 
 
+
+
 .card img {
   max-height: 200px;
   object-fit: cover;
@@ -166,17 +168,47 @@ footer {
   font-size: 1.5rem;
 }
 
+@media screen and (max-width: 1065px){
+  .video-ref{
+    
+    height: 400px;
+  }
+  
+}
+
+
 @media screen and (max-width: 994px){
   .navbar-collapse{
     text-align: center;
     
   }
+
+  .video-ref{
+    
+    height: 400px;
+  }
+
 }
+
+@media screen and (max-width: 765px){
+  .video-ref{
+    
+    height: 300px;
+  }
+
+}
+
+
 @media screen and (max-width: 315px){
 
   .navbar-brand img{
     width: 100%;
   }
+
+  .video-ref{
+   
+    height: 180px;
+  } 
 
   .navbar-toggler{
     width: 100%;

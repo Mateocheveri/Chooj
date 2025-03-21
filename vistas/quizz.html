@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examen1</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>quizz  FINAL</h2>
+
+        <form id="quizForm">
+           
+            <div class="form-group">
+                <label for="question1">¿Cuál es tu color favorito?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1_option1" value="Rojo">
+                    <label class="form-check-label" for="q1_option1">Rojo</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1_option2" value="Azul">
+                    <label class="form-check-label" for="q1_option2">Azul</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1_option3" value="Verde">
+                    <label class="form-check-label" for="q1_option3">Verde</label>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="question2">¿Qué tipo de música prefieres?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2_option1" value="Pop">
+                    <label class="form-check-label" for="q2_option1">Pop</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2_option2" value="Rock">
+                    <label class="form-check-label" for="q2_option2">Rock</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2_option3" value="Jazz">
+                    <label class="form-check-label" for="q2_option3">Jazz</label>
+                </div>
+            </div>
+
+     
+            <div class="form-group">
+                <label for="question3">¿Prefieres vacaciones en la playa o en la montaña?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3_option1" value="Playa">
+                    <label class="form-check-label" for="q3_option1">Playa</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3_option2" value="Montaña">
+                    <label class="form-check-label" for="q3_option2">Montaña</label>
+                </div>
+            </div>
+
+     
+            <div class="form-group">
+                <label for="question4">¿Qué dispositivo prefieres para navegar en internet?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4_option1" value="Móvil">
+                    <label class="form-check-label" for="q4_option1">Móvil</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4_option2" value="PC">
+                    <label class="form-check-label" for="q4_option2">PC</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4_option3" value="Tablet">
+                    <label class="form-check-label" for="q4_option3">Tablet</label>
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label for="question5">¿Cuál es tu comida favorita?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5_option1" value="Pizza">
+                    <label class="form-check-label" for="q5_option1">Pizza</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5_option2" value="Sushi">
+                    <label class="form-check-label" for="q5_option2">Sushi</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5_option3" value="Hamburguesa">
+                    <label class="form-check-label" for="q5_option3">Hamburguesa</label>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" onclick="capturarRespuestas()">Enviar</button>
+        </form>
+    </div>
+
+    <script src="../js/quizz.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -8,6 +8,7 @@ function registrarUser(e){
     let user = {
         userName: usuario.value,
         userPass: contraseña.value,
+        progreso: 0,
         
         userLogged: false
     }

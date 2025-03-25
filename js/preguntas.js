@@ -57,12 +57,12 @@ e.preventDefault()
     /* condicional que me dice si gane o perdi el examen */
 
 if(acumulado >= 3) {
-    console.log("ganaste el examen :)")
+    console.log("ganaste el examen 👍")
 
     user.progreso += 25
     localStorage.setItem("usuarios", JSON.stringify(user))
 }else{
-    console.log("debes repetir el examen")
+    console.log("debes repetir el examen 🦗")
 }
 
 console.log(acumulado)

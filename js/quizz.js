@@ -1,4 +1,4 @@
-let user = JSON.parse(localStorage.getItem("user"))
+let user = JSON.parse(localStorage.getItem("usuarios"))
 
 const form = document.querySelector('#quizForm')
 
@@ -27,11 +27,11 @@ function validarRespuestas(e){
 
     const respuestasUser = capturarRespuestas()
     const respuestasCorrectas ={
-        p1: "Azul",
-        p2: "Jazz",
-        p3: "Montaña",
-        p4: "PC",
-        p5: "Hamburguesa"
+        p1: "c",
+        p2: "b",
+        p3: "a",
+        p4: "b",
+        p5: "a"
     }
 
     let acumulado = 0
@@ -51,38 +51,23 @@ function validarRespuestas(e){
 
 
     //condicion  que me dice si gane o perdi el examen
-    if(acumulado >= 3){
-        console.log("Ganaste el examen 🟩")
-        user.progreso += 25
-        localStorage.setItem("user",JSON.stringify(user))
+    for (let i = 0; i < user.length; i++) {
+       if(user[i].logged && acumulado >= 3){
+            console.log("Ganaste el examen 🟩")
+            user[i].progreso += 25
+            localStorage.setItem("usuarios",JSON.stringify(user))
+            return
+        } 
+           
     }
-    else{
-        console.log("Debes repetir el examen 💀")
-    }
+   
+    
+       console.log("Debes repetir el examen 💀")
+    
 
     console.log(acumulado)
 
-   /*  if(respuestasCorrectas.p1 === respuestasUser.p1){
-        acumulado++
-    }
-    if(respuestasCorrectas.p2 === respuestasUser.p2){
-        acumulado++
-    }
-    if(respuestasCorrectas.p3 === respuestasUser.p3){
-        acumulado++
-    }
-    if(respuestasCorrectas.p4 === respuestasUser.p4){
-        acumulado++
-    }
-    if(respuestasCorrectas.p5 === respuestasUser.p5){
-        acumulado++
-    }
-
-    console.log("Tu acumulado es :", acumulado)
-
-    for (const key in respuestasCorrectas) {
-        console.log(respuestasCorrectas[key])
-    } */
+  
 } 
 
 form.addEventListener("submit", validarRespuestas)

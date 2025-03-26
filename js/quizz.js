@@ -48,15 +48,14 @@ function validarRespuestas(e){
 
     //verifico cuanto lleva el usuario de progreso previo
     // let user = JSON.parse(localStorage.getItem("user"))|| {}; 
-
-
     //condicion  que me dice si gane o perdi el examen
     for (let i = 0; i < user.length; i++) {
        if(user[i].logged && acumulado >= 3){
-            alert("Ganaste el examen 🟩")
+            alert(`Ganaste el examen 🟩Has respondido correctamente ${arrayRespuestasCorrectas.acumulado} de ${arrayRespuestasUser.acumulado} preguntas.`);
             console.log("Ganaste el examen 🟩")
             user[i].progreso += 100
             localStorage.setItem("usuarios",JSON.stringify(user))
+            
             return
         } 
            
@@ -65,7 +64,8 @@ function validarRespuestas(e){
     console.log("Debes repetir el examen 💀")
     console.log(acumulado)
 } 
-function aprobado(){}
+
+
 
 
 form.addEventListener("submit", validarRespuestas)

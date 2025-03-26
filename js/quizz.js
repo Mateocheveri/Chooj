@@ -57,20 +57,15 @@ function validarRespuestas(e){
             console.log("Ganaste el examen 🟩")
             user[i].progreso += 100
             localStorage.setItem("usuarios",JSON.stringify(user))
-            user[i].certificado = true
             return
         } 
            
     }
-   
-       alert("Debes repetir el examen 💀")
-       console.log("Debes repetir el examen 💀")
-       user[i].certificado = false
-    
-
+    alert("Debes repetir el examen 💀")
+    console.log("Debes repetir el examen 💀")
     console.log(acumulado)
-
-  
 } 
+function aprobado(){}
+
 
 form.addEventListener("submit", validarRespuestas)

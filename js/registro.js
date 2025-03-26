@@ -9,8 +9,7 @@ function registrarUser(e){
         userName: usuario.value,
         userPass: contraseña.value,
         progreso: 0,
-        
-        /* userLogged: false */
+        certificado: false
     }
 
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []

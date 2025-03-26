@@ -3,7 +3,6 @@ window.location = "../index.html" */
 
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
 
-//cerrar sesion
 function cerrarSesion (){
 
     for (let i = 0; i < usuarios.length; i++) {

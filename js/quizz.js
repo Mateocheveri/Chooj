@@ -53,16 +53,19 @@ function validarRespuestas(e){
     //condicion  que me dice si gane o perdi el examen
     for (let i = 0; i < user.length; i++) {
        if(user[i].logged && acumulado >= 3){
+            alert("Ganaste el examen 🟩")
             console.log("Ganaste el examen 🟩")
-            user[i].progreso += 25
+            user[i].progreso += 100
             localStorage.setItem("usuarios",JSON.stringify(user))
+            user[i].certificado = true
             return
         } 
            
     }
    
-    
+       alert("Debes repetir el examen 💀")
        console.log("Debes repetir el examen 💀")
+       user[i].certificado = false
     
 
     console.log(acumulado)

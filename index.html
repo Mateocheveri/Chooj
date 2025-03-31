@@ -40,8 +40,8 @@
       <span class="navbar-toggler-icon "></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNav">
-      <ul class="navbar-nav ms-auto pt-4 ">
-        <!-- <li class="nav-item dropdown">
+      <ul  class="navbar-nav ms-auto pt-4 ">
+        <li id="btnmodulos" class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Modulos
           </a>
@@ -51,15 +51,21 @@
             <li><a class="dropdown-item" href="./vistas/produccion.html">Produccion</a></li>
             <li><a class="dropdown-item" href="./vistas/edicion.html">Edicion</a></li>
           </ul>
-        </li> -->
+        </li> 
         <li class="nav-item"><a class="nav-link" href="./vistas/quienes-somos.html">Nosotros</a></li>
         <li class="nav-item">
           <a class="nav-link" href="#">Certificación</a>
         </li>
         <li class="nav-item"><a class="nav-link" href="./vistas/noticias.html">Blog</a></li>
       </ul>
-      <a class="nav-link" href="./vistas/inicio-sesion.html"><button class="btn btn-outline-light mx-2">Inicio Sesión</button></a>
-      <a class="nav-link" href="./vistas/registro.html"><button class="btn btn-outline-light">Registro</button></a>
+      <a class="nav-link" id="btniniciar" href="./vistas/inicio-sesion.html"><button id="btniniciar" class="btn btn-outline-light mx-2">Inicio Sesión</button></a>
+      <a class="nav-link" id="btnregistro"  href="./vistas/registro.html"><button id="btnregistro" class="btn btn-outline-light">Registro</button></a>
+      <li class="nav-item">
+        <!-- Botón para abrir el offcanvas -->
+        <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">
+            <i id="ico" class="fa-regular fa-circle-user fs-1 m-0 px-3"></i>
+        </a>
+    </li>
     </div>
   </nav>
 

@@ -89,6 +89,12 @@ document.addEventListener("DOMContentLoaded", function () {
         btnModulos.style.display = "block";
         btnRegistro.style.display = "none";
         btnIniciarSesion.style.display = "none";
+
+
+        const nombre = document.querySelector("#NombreUser");
+
+        nombre.textContent = `${usuarios[i].userName}`;
+
   
         return
       }

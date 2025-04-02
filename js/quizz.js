@@ -54,6 +54,8 @@ function validarRespuestas(e){
             alert(`Ganaste el examen 🟩Has respondido correctamente ${acumulado} de ${arrayRespuestasUser.length} preguntas.`);
             console.log("Ganaste el examen 🟩")
             user[i].progreso += 100
+            user[i].certificado = true
+            window.location = "../vistas/dashboard.html"
             localStorage.setItem("usuarios",JSON.stringify(user))
             
             return

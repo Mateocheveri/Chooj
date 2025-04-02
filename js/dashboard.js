@@ -1,5 +1,5 @@
-
-let user = JSON.parse(localStorage.getItem("usuarios"))  //array
+let user = JSON.parse(localStorage.getItem("usuarios")) || [];
+/* let user = JSON.parse(localStorage.getItem("usuarios"))  */
 
 const progreso = document.querySelector("#progreso")
 
@@ -13,3 +13,34 @@ for (let i = 0; i < user.length; i++) {
     }
     
 }
+
+
+
+//boton de certificado 
+document.addEventListener("DOMContentLoaded", function () {
+    const quizz = document.querySelector("#btnQuizz")
+    const diploma = document.querySelector("#btncertificado")
+
+
+    for (let i = 0; i < user.length; i++) {
+  
+        let Certificado = user[i] ? user[i].certificado: false
+    
+        console.log(Certificado)
+    
+        if (user[i].logged) {
+
+            quizz.style.display = "none";
+            diploma.style.display = "block";
+  
+    
+          return
+        } 
+    
+    }
+    quizz.style.display = "block";
+    diploma.style.display = "none";
+   
+     
+
+})

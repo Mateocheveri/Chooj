@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (let i = 0; i < user.length; i++) {
   
-        let Certificado = user[i] ? user[i].certificado: false
+        /* let Certificado = user[i] ? user[i].certificado: false
     
-        console.log(Certificado)
+        console.log(Certificado) */
     
-        if (user[i].logged) {
+        if (user[i].logged && user[i].certificado) {
 
             quizz.style.display = "none";
             diploma.style.display = "block";

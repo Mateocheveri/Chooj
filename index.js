@@ -67,6 +67,8 @@ modulos.forEach( element => {
     container.appendChild(box)
 }) 
  */
+
+//condiciones al iniciar sesion 
 document.addEventListener("DOMContentLoaded", function () {
     const btnRegistro = document.querySelector('#btnregistro');
     const btnIniciarSesion = document.querySelector('#btniniciar');
@@ -107,3 +109,4 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRegistro.style.display = "block";
     btnIniciarSesion.style.display = "block";
   });
+  

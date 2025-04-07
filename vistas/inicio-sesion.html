@@ -19,9 +19,26 @@
 </head>
 <body class="bg-info d-flex justify-content-center align-items-center vh-100">
 
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">El usuario o la contraseña son incorrectas</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Verifica tu usuario o registrate para iniciar sesion.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="./registro.html"><button type="button" class="btn btn-primary">registrate</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="bg-white p-5 rounded-5 text-secondary shadow" style="width: 25rem">
-
     <!-- boton de regreso -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
       <a href="../index.html"><button type="button" class="btn btn-outline-info"><i class="fa-solid fa-xmark"></i></button></a>
@@ -43,7 +60,7 @@
         </div>
         <input class="form-control bg-light" id="contra" type="password" placeholder="contraseña" required/>
       </div>
-      <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm">
+      <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
         iniciar sesión
       </button>
   <div class="d-flex gap-1 justify-content-center mt-1">

@@ -18,10 +18,16 @@ function usuarioValido(e){
             console.log(usuarios)
             localStorage.setItem("usuarios", JSON.stringify(usuarios))
             return
-        } 
-        else{
-            console.log('volver a intentar')
         }
+        else{
+           /*  const myModal = document.getElementById('myModal')
+            const myInput = document.getElementById('myInput')
+            myModal.addEventListener('shown.bs.modal', () => {
+                myInput.focus()
+            })  */
+        }
+       
+        
         
     }
     form.reset();

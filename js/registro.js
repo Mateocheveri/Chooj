@@ -16,7 +16,12 @@ function registrarUser(e){
 
     for (let i = 0; i < usuarios.length; i++) {
         if (usuario.value === usuarios[i].userName){
-            alert("el ususario ya esta registrado 💥")
+            const myModal = document.getElementById('myModal')
+            const myInput = document.getElementById('myInput')
+            
+            myModal.addEventListener('shown.bs.modal', () => {
+              myInput.focus()
+            })
             return
         }      
     }
@@ -28,4 +33,12 @@ function registrarUser(e){
     window.location = "../vistas/inicio-sesion.html"
 }
 
+
 form.addEventListener('submit',registrarUser)
+
+const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})

@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/modulos.css">
+    <link rel="stylesheet" href="../css/quizz.css">
 
      <!-- animate.css -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
@@ -55,6 +56,19 @@
           </ul>
       </div>
   </nav>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 texto-oscuro" id="h1-respuesta"></h1>
+        </div>
+        <div class="modal-footer">
+          <a href="./dashboard.html"><button type="submit" class="btn btn-primary">continuar</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- Offcanvas (sidebar para la info del usuario) -->
   <div class="offcanvas offcanvas-end bg-light" tabindex="-1" id="offcanvasUser" aria-labelledby="offcanvasUserLabel">
@@ -175,7 +189,7 @@
                     </div>
                 </div>
     
-                <button type="submit" class="btn btn-primary" onclick="capturarRespuestas()">Enviar</button>
+                <button type="submit" class="btn btn-primary" onclick="capturarRespuestas()" data-bs-toggle="modal" data-bs-target="#exampleModal">Enviar</button>
             </form>
         </div>
     

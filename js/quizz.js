@@ -49,21 +49,23 @@ function validarRespuestas(e){
     //verifico cuanto lleva el usuario de progreso previo
     // let user = JSON.parse(localStorage.getItem("user"))|| {}; 
     //condicion  que me dice si gane o perdi el examen
+
+    const h1 = document.querySelector('#h1-respuesta')
+
     for (let i = 0; i < user.length; i++) {
        if(user[i].logged && acumulado >= 3){
-            alert(`Ganaste el examen 🟩Has respondido correctamente ${acumulado} de ${arrayRespuestasUser.length} preguntas.`);
+            h1.innerHTML=`Ganaste el examen 🟩 Has respondido correctamente ${acumulado} de ${arrayRespuestasUser.length} preguntas.`;
             console.log("Ganaste el examen 🟩")
             user[i].progreso += 100
             user[i].certificado = true
-            window.location = "../vistas/dashboard.html"
+            /* window.location = "../vistas/dashboard.html" */
             localStorage.setItem("usuarios",JSON.stringify(user))
             
             return
         } 
            
     }
-    alert(`Debes repetir el examen 💀 Has respondido correctamente ${acumulado} de ${arrayRespuestasUser.length} preguntas.`)
-    console.log("Debes repetir el examen 💀")
+    h1.innerHTML=`Debes repetir el examen 💀 Has respondido correctamente ${acumulado} de ${arrayRespuestasUser.length} preguntas.`;
     console.log(acumulado)
 } 
 

@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/modulos.css">
-    <link rel="stylesheet" href="../css/quizz.css">
 
      <!-- animate.css -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" 
@@ -61,10 +60,11 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5 texto-oscuro" id="h1-respuesta"></h1>
+          <h1 class="modal-title fs-5 texto-oscuro" id="h1-respuesta" style="color: black;"></h1>
+          <button type="button" id="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-footer">
-          <a href="./dashboard.html"><button type="submit" class="btn btn-primary">continuar</button></a>
+          <a href="../vistas/dashboard.html"></a><button type="button" class="btn btn-primary" id="btn-final">continuar</button></a>
         </div>
       </div>
     </div>

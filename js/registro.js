@@ -15,15 +15,15 @@ function registrarUser(e){
     let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
 
     for (let i = 0; i < usuarios.length; i++) {
-        if (usuario.value === usuarios[i].userName){
-            const myModal = document.getElementById('myModal')
-            const myInput = document.getElementById('myInput')
+      if (usuario.value === usuarios[i].userName){
+        const myModal = document.getElementById('myModal')
+        const myInput = document.getElementById('myInput')
             
-            myModal.addEventListener('shown.bs.modal', () => {
-              myInput.focus()
-            })
-            return
-        }      
+        myModal.addEventListener('shown.bs.modal', () => {
+          myInput.focus()
+        })
+        return
+      }      
     }
 
     usuarios.push(user)
@@ -35,10 +35,3 @@ function registrarUser(e){
 
 
 form.addEventListener('submit',registrarUser)
-
-const myModal = document.getElementById('myModal')
-const myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', () => {
-  myInput.focus()
-})

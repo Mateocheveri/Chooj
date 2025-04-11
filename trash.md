@@ -123,3 +123,14 @@
       Open Offcanvas Sidebar
     </button>
   </div> -->
+
+
+<!--   .profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  height: 60%;
+  width: 60%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 60% !important;
+} -->

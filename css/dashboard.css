@@ -62,6 +62,12 @@
 } 
 
 
+.list-group-item:hover{
+
+    background-color: rgb(226, 226, 226);
+}
+
+
 
 
 .carousel-item img {

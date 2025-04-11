@@ -109,7 +109,7 @@
 
         <div class="mod">
         <div class="nav-item dropdown py-4">
-            <a class="nav-link  text-center text-dark border border-dark" >
+            <a class="nav-link  text-center text-dark border-bottom border-dark " >
               Módulos
             </a>
            
@@ -202,9 +202,11 @@
    <div class="info-student col-lg-3  col-md-12  col-sm-12  d-flex my-2    " >
      
        <!-- Barra lateral -->
-       <div class=" info-student col-lg-12 col-md-12 col-sm-12 column-gap-4  px-2 rounded-3  " >
-         <ul class="  col-lg-12   list-group  gap-4 bg-dark-subtle p-2  " >
-           <li class="list-group-item  "><a href="../index.html">Inicio </a></li>
+       <div class=" info-student col-lg-12 col-md-12 col-sm-12 column-gap-3  px-2 rounded-3  " >
+         <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  " >
+          
+           <li class="list-group-item "><a class="text-decoration-none" href="../index.html">Inicio </a></li>
+      <!-- collapse instructores -->       
            <li class="list-group-item rounded-3">
             <p class="d-inline-flex gap-1">
             <a
@@ -233,23 +235,99 @@
             </div>
             
             </li>
-           <li class="list-group-item">Instructores</li>
-
-           <li class="nav-item dropdown ">  
-           <li class="list-group-item  "><a class="nav-link dropdown-toggle   text-dark " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Modulos
-          </a> 
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
-            <li><a class="dropdown-item" href="../vistas/guiones.html">guiones</a></li>
-            <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
-            <li><a class="dropdown-item" href="../vistas/edicion.html">Edicion</a></li>
-          </ul>
-        </li>
-        </li>
 
 
-           <li class="list-group-item">Reportes</li>
+  <!-- collapse instructores -->            
+           <li class="list-group-item rounded-3">
+
+            <p class="d-inline-flex gap-1">
+              <a
+                class="text-decoration-none text-dark pt-2"
+                data-bs-toggle="collapse"
+                href="#multiCollapseExample2"
+                role="button"
+                aria-expanded="false"
+                aria-controls="multiCollapseExample1"
+                >Instructores online</a
+              >
+              
+            </p>
+            <div class="row  ">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample2">
+                  <div class="card card-body">
+                    <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+           </li>
+
+
+           <li class="list-group-item">
+            <p class="d-inline-flex gap-1">
+              <a
+                class="text-decoration-none text-dark pt-2"
+                data-bs-toggle="collapse"
+                href="#multiCollapseExample3"
+                role="button"
+                aria-expanded="false"
+                aria-controls="multiCollapseExample3"
+                >Reportes</a
+              >
+              
+            </p>
+            <div class="row  ">
+              <div class="col">
+                <div class="collapse multi-collapse" id="multiCollapseExample3">
+
+                  <!-- formulario de reporte -->
+                  <div class="bootstrap-form ">
+                    <div class="container">
+                      <form>
+                        <div class="mb-3 row">
+                          <label for="inputName" class="col-sm-2 col-form-label text-end">Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" placeholder="Nombre">
+                          </div>
+                        </div>
+                  
+                        <div class="mb-3 row">
+                          <label for="inputEmail" class="col-sm-2 col-form-label text-end">Email</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputEmail" placeholder="E-mail ">
+                          </div>
+                        </div>
+                  
+                                          
+                        <div class="mb-3 row">
+                          <label for="inputMessage" class="col-sm-2 col-form-label text-end">Message</label>
+                          <div class="col-sm-10">
+                            <textarea class="form-control" id="inputMessage" rows="5" placeholder="Mensaje"></textarea>
+                          </div>
+                        </div>
+                  
+                        <div class="mb-3 row">
+                          <div class="col-sm-12 text-end">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+
+           </li>
          </ul>
 
          <div class="examen col-lg-12 col-md-12 col-sm-12 justify-content-center bg-dark-subtle py-2 mt-2 px-2 rounded-3 ">
@@ -480,7 +558,29 @@
     <div
     class="col-md-11 col-sm-12  bg-dark-subtle px-2 mx-auto rounded-3  mx-2 border ">
     <ul class="list-group my-2  ">
-      <li class="list-group-item">CONFIGURACIONES</li>
+      <li class="list-group-item">
+        <p class="d-inline-flex gap-1">
+          <a
+            class="text-decoration-none text-dark pt-2"
+            data-bs-toggle="collapse"
+            href="#multiCollapseExample4"
+            role="button"
+            aria-expanded="false"
+            aria-controls="multiCollapseExample4"
+            >TU PERFIL</a
+          >
+          
+        </p>
+        <div class="row  ">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample4">
+              
+
+            </div>
+          </div>
+
+
+      </li>
       <li class="list-group-item">CERTIFICADOS</li>
       <li class="list-group-item">FAVORITOS</li>
       <li class="list-group-item">CONTACTO</li>

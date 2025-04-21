@@ -134,3 +134,27 @@
   -moz-border-radius: 50% !important;
   border-radius: 60% !important;
 } -->
+
+
+<div> 
+<h2> Lo que aprenderás </h2>
+
+<p> Técnicas para involucrar mejor a la audiencia a un nivel subconsciente</p>
+
+<p>Por qué la elección del color es tan importante y cómo afecta a diferentes emociones</p>
+
+<p>Significado de diferentes Ángulos y Movimientos de Cámara</p>
+
+<p>Cómo la Iluminación crea diferentes estados de ánimo</p>
+
+<p>Cómo el Sonido / Música / Silencio crean Emoción</p>
+
+<p>Entender por qué la Ubicación y la Decoración de Escenarios son tan importantes para crear la atmósfera adecuada</p>
+
+<p>¿Qué significa tener música Dentro de la película o Fuera?</p>
+
+<p>¿Qué es el Efecto Kuleshov y cómo se aplica a la música?</p>
+
+<p>Cómo crear películas con más significado y emoción</p>
+
+</div>

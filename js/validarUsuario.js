@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const btnIniciarSesion = document.querySelector('#btniniciar');
   const btnModulos = document.querySelector('#btnmodulos');
   const userIcon = document.querySelector("#ico");
+  
+  const conbusqueda = document.querySelector("#condicon-busqueda")
 
 
 
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(confirmarSesion)
 
     if (confirmarSesion) {
-
+      
       btnModulos.style.display = "block";
       btnRegistro.style.display = "none";
       btnIniciarSesion.style.display = "none";
@@ -26,7 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   }
 
- 
   btnModulos.style.display = "none";
   userIcon.style.display = "none";
   btnRegistro.style.display = "block";

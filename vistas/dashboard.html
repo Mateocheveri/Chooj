@@ -309,7 +309,6 @@ ul {
               Módulos
             </a>
            
-
             <div class="col-md-12 col-lg-12 my-3">
               <div class="card h-100">
                 <!-- <img src="ruta-de-tu-imagen.jpg" class="card-img-top" alt="Imagen del módulo"> -->
@@ -536,6 +535,8 @@ ul {
             <div class="progreso-test  text-center d-flex py-3 border border-dark-subtle rounded-2">
               <h1 class="fs-5 pt-2  col-8   mx-2">Tu progreso</h1>
               <p class=" fs-5  col  rounded-3 p-1" id="progreso">0%</p>
+              <p><strong>Nombre:</strong> <p id="NombreUser"></p></p>
+
             </div> 
           </div>
          </div>
@@ -756,14 +757,14 @@ ul {
     <ul class="list-group my-2   ">
       <li class="list-group-item">
         <p  class="d-inline-flex gap-1 ">
-          <button
+          <a
             class="text-decoration-none text-dark pt-2 "
             data-bs-toggle="collapse"
             href="#multiCollapseExample4"
             role="button"
             aria-expanded="false"
             aria-controls="multiCollapseExample4"
-            >TU PERFIL</button
+            >TU PERFIL</a
           >
           
         </p>
@@ -772,6 +773,7 @@ ul {
             <div class="collapse multi-collapse" id="multiCollapseExample4">
               
              <!-- START  --> 
+             
               <div class="container">
                 <div class="row profile">
                   <div class="col-md-12">
@@ -788,7 +790,7 @@ ul {
                       <!-- END SIDEBAR USERPIC -->
                       <!-- SIDEBAR USER TITLE -->
                       <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">nombre</div>
+                        <p id="NombreUser" class="border border-danger  text-dark"></p> 
                         <div class="profile-usertitle-job">Student</div>
                       </div>
                       <!-- END SIDEBAR USER TITLE -->
@@ -850,8 +852,11 @@ ul {
 
       </li>
       <!-- <li class="list-group-item">CERTIFICADOS</li> -->
-      <li class="list-group-item">FAVORITOS</li>
-      <li class="list-group-item">CONTACTO</li>
+     
+
+
+     
+      <li class="list-group-item"><a href="./quienes-somos.html" class="text-decoration-none text-dark">CONTACTO </a> </li>
       
     </ul>
 
@@ -994,7 +999,7 @@ ul {
 
 
 
-
+<!-- footer -->
     
     <footer>
         <div class="container">

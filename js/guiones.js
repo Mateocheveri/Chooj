@@ -1,73 +1,40 @@
-const container = document.querySelector('.container');
-const inicio = document.querySelector('#inicio');
-const ingresovideo = document.querySelector('.ingresovideos');
-const btn = document.querySelector('#btnvideo')
+document.addEventListener("DOMContentLoaded", function () {
+    const btnRegistro = document.querySelector('#btnregistro');
+    const btnIniciarSesion = document.querySelector('#btniniciar');
+    const btnModulos = document.querySelector('#btnmodulos');
+    const userIcon = document.querySelector("#ico");
+
+  
+  
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  
+    for (let i = 0; i < usuarios.length; i++) {
+  
+      let confirmarSesion = usuarios[i] ? usuarios[i].logged : false
+  
+      console.log(confirmarSesion)
+  
+      if (confirmarSesion) {
+
+        btnModulos.style.display = "block";
+        btnRegistro.style.display = "none";
+        btnIniciarSesion.style.display = "none";
 
 
-modulos.forEach(element => {
+        const nombre = document.querySelector("#NombreUser");
 
+        nombre.textContent = `${usuarios[i].userName}`;
 
-   if(element.id == 2){
-       let ingreso = document.createElement('div')
-       let principal = document.createElement('div')
-       let card = document.createElement('div') 
-
-
-       principal.innerHTML = `
-           <img src="${element.imagen}" alt="">
-           <h2>${element.nombre}</h2>
-       `
-       
-
-       ingreso.innerHTML = `
-           <h1>${element.nombre}</h1>
-           <p>${element.descripcion}</p>
-           <button id="btnvideo"><a href="./curso.html">inicia tu aventura -></a></button>
-       `
-       
-
-       card.innerHTML = `
-           <div class="card">
-               <div class="card-header">
-                   <img src="${element.imagen}" alt="">
-               </div>
-               <div class="card-body">
-                   <h1 class="title">${element.titulouno}</h1>
-                   <p class="text">${element.infouno}</p>
-               </div>
-           </div>
-       
-
-           <div class="card">
-               <div class="card-header">
-                   <img src="${element.imagen}" alt="">
-               </div>
-               <div class="card-body">
-                 <h1 class="title">${element.titulodos}</h1>
-                 <p class="text">${element.infodos}</p>
-               </div>
-           </div>
-       
-       
-           <div class="card">
-               <div class="card-header">
-                   <img src="${element.imagen}" alt="">
-               </div>
-               <div class="card-body">
-                 <h1 class="title">${element.titulotres}</h1>
-                 <p class="text">${element.infotres}</p>
-               </div>
-           </div>
-      `
-      
-       inicio.appendChild(principal)
-       ingresovideo.appendChild(ingreso)
-       container.appendChild(card)
-
-       function abrirvideo(){
-            window.location = "../vistas/curso.html"
-       }
-       btn.addEventListener("click",abrirvideo)
-   }
+  
+        return
+      }
+  
+    }
+  
    
-})
+    btnModulos.style.display = "none";
+    userIcon.style.display = "none";
+    btnRegistro.style.display = "block";
+    btnIniciarSesion.style.display = "block";
+  });

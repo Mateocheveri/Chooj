@@ -16,19 +16,19 @@ for (let i = 0; i < user.length; i++) {
 
 //nombre user
 document.addEventListener("DOMContentLoaded", function () {
+    const nombre1 = document.querySelector("#NombreU");
     const nombre = document.querySelector("#NombreUser");
     for (let i = 0; i < user.length; i++) {
       
-  
       if (user[i].logged) {
         nombre.textContent = `${user[i].userName}`;
+        nombre1.textContent = `${user[i].userName}`;
         return
       }
   
     }
-  
-});
 
+  })
 
 
 //boton de certificado 

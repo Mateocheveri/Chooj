@@ -648,17 +648,7 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
 
-    <script>
-      const video = document.getElementById('miVideo');
-      const barra = document.getElementById('barraProgreso');
-
-      video.addEventListener('timeupdate', () => {
-        const porcentaje = (video.currentTime / video.duration) * 100;
-        barra.style.width = porcentaje + '%';
-        barra.setAttribute('aria-valuenow', porcentaje.toFixed(0));
-      });
-
-    </script>
+    <script src="../js/guiones.js"></script>
 
 </body>
 

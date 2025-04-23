@@ -326,7 +326,7 @@
                       </div>
                       <div class="col-md-10 col-sm-12 m-auto py-4   ">
                         <div class="card-body">
-                          <h5 class="card-title border border-info">
+                          <h5 class="card-title ">
                             Video: Introducción al Guion Cinematográfico
                           </h5>
                           <p class="card-text">
@@ -378,7 +378,7 @@
 
 
                     <!-- Modal -->
-                    <div class="modal fade modal-sm" id="staticBackdrop" data-bs-backdrop="static"
+                    <div class="modal fade modal-sm" id="staticBackdrop" data-bs-backdrop="static "
                       data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -631,18 +631,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
-    <script>
-      const video = document.getElementById('miVideo');
-      const barra = document.getElementById('barraProgreso');
-
-      video.addEventListener('timeupdate', () => {
-        const porcentaje = (video.currentTime / video.duration) * 100;
-        barra.style.width = porcentaje + '%';
-        barra.setAttribute('aria-valuenow', porcentaje.toFixed(0));
-      });
-
-
-    </script>
+    <script src="../js/estilos.js"></script>
 
 </body>
 

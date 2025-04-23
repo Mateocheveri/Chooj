@@ -36,3 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
     btnRegistro.style.display = "block";
     btnIniciarSesion.style.display = "block";
   });
+
+  const video = document.getElementById('miVideo');
+  const barra = document.getElementById('barraProgreso');
+
+  video.addEventListener('timeupdate', () => {
+    const porcentaje = (video.currentTime / video.duration) * 100;
+    barra.style.width = porcentaje + '%';
+    barra.setAttribute('aria-valuenow', porcentaje.toFixed(0));
+  });

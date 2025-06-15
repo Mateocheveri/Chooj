@@ -120,8 +120,6 @@
         </video>
       </div>
       
-
-
       <div class="carousel-item active">
         <img src="./assets/logo prime.png" alt="baner img" />
       </div>
@@ -213,56 +211,181 @@
   
   <h2 class="text-center text-light">MÓDULOS</h2>
   <div class="container pb-5">
-
     <div class="row">
       <div class="col-md-3">
-        <div class="card1">
+        <div class="card1" data-bs-toggle="modal" data-bs-target="#estilosModal" style="cursor: pointer;">
           <img src="./assets/animacion-portada.jpeg" id="img" alt="Proyecto 1">
           <div class="intro">
             <h5 id="title">ESTILOS</h5>
             <p id="text">Aprende sobre el origen del cine y como traza su camino variando entre todos sus géneros.</p>
-            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Ver Más</a>
+            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar ya</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card1">
+        <div class="card1" data-bs-toggle="modal" data-bs-target="#guionesModal" style="cursor: pointer;">
           <img src="./assets/guiones.jpg" id="img" alt="Proyecto 1">
           <div class="intro">
             <h5 id="title">GUIONES</h5>
             <p id="text">Aprende sobre el origen del cine y como traza su camino variando entre todos sus géneros.</p>
-            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Ver Más</a>
+            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar ya</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card1">
+        <div class="card1" data-bs-toggle="modal" data-bs-target="#produccionModal" style="cursor: pointer;">
           <img src="./assets/book.jpeg" id="img" alt="Proyecto 1">
           <div class="intro">
             <h5 id="title">PRODUCCION</h5>
             <p id="text">Aprende sobre el origen del cine y como traza su camino variando entre todos sus géneros.</p>
-            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Ver Más</a>
+            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar ya</a>
           </div>
         </div>
       </div>
 
       <div class="col-md-3">
-        <div class="card1">
+        <div class="card1" data-bs-toggle="modal" data-bs-target="#edicionModal" style="cursor: pointer;">
           <img src="./assets/portata-revista _page-0001.jpg" id="img" alt="Proyecto 1">
           <div class="intro">
             <h5 id="title">EDICION</h5>
             <p id="text">Aprende sobre el origen del cine y como traza su camino variando entre todos sus géneros.</p>
-            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Ver Más</a>
+            <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar ya</a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
+  <!-- Modales -->
+  <div class="modal fade" id="estilosModal" tabindex="-1" aria-labelledby="estilosModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="estilosModalLabel">Módulo de Estilos</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./assets/animacion-portada.jpeg" class="img-fluid rounded" alt="Estilos">
+            </div>
+            <div class="col-md-6">
+              <h4>Descripción del Módulo</h4>
+              <p>En este módulo aprenderás sobre los diferentes estilos cinematográficos y su evolución a lo largo de la historia del cine.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Historia del cine</li>
+                <li class="list-group-item">Géneros cinematográficos</li>
+                <li class="list-group-item">Técnicas de dirección</li>
+                <li class="list-group-item">Análisis de películas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar Módulo</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="modal fade" id="guionesModal" tabindex="-1" aria-labelledby="guionesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="guionesModalLabel">Módulo de Guiones</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./assets/guiones.jpg" class="img-fluid rounded" alt="Guiones">
+            </div>
+            <div class="col-md-6">
+              <h4>Descripción del Módulo</h4>
+              <p>Aprende a crear historias cautivadoras y desarrollar guiones profesionales para cine y animación.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Estructura narrativa</li>
+                <li class="list-group-item">Desarrollo de personajes</li>
+                <li class="list-group-item">Diálogos efectivos</li>
+                <li class="list-group-item">Formatos de guión</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar Módulo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="produccionModal" tabindex="-1" aria-labelledby="produccionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="produccionModalLabel">Módulo de Producción</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./assets/book.jpeg" class="img-fluid rounded" alt="Producción">
+            </div>
+            <div class="col-md-6">
+              <h4>Descripción del Módulo</h4>
+              <p>Domina los aspectos técnicos y logísticos de la producción cinematográfica y de animación.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Planificación de producción</li>
+                <li class="list-group-item">Gestión de recursos</li>
+                <li class="list-group-item">Técnicas de rodaje</li>
+                <li class="list-group-item">Dirección de arte</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar Módulo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="edicionModal" tabindex="-1" aria-labelledby="edicionModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="edicionModalLabel">Módulo de Edición</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="./assets/portata-revista _page-0001.jpg" class="img-fluid rounded" alt="Edición">
+            </div>
+            <div class="col-md-6">
+              <h4>Descripción del Módulo</h4>
+              <p>Aprende las técnicas de edición y postproducción para crear contenido audiovisual profesional.</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Software de edición</li>
+                <li class="list-group-item">Técnicas de montaje</li>
+                <li class="list-group-item">Efectos visuales</li>
+                <li class="list-group-item">Colorización</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="./vistas/inicio-sesion.html" class="btn btn-primary">Comenzar Módulo</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
 

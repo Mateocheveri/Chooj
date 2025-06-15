@@ -294,3 +294,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+/* MODAL CAROUSEL  */
+function navegarModal(modalActual, modalSiguiente) {
+    // Cerrar el modal actual
+    const modalActualElement = document.getElementById(modalActual);
+    const bsModalActual = bootstrap.Modal.getInstance(modalActualElement);
+    bsModalActual.hide();
+
+    // Abrir el siguiente modal
+    const modalSiguienteElement = document.getElementById(modalSiguiente);
+    const bsModalSiguiente = new bootstrap.Modal(modalSiguienteElement);
+    bsModalSiguiente.show();
+  }

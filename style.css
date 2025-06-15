@@ -545,3 +545,28 @@ font-size: 30px;
 .col-md-3 {
     padding: 0 10px;
 }
+
+/* Estilos para los botones de navegación de modales */
+.modal-body .btn-primary {
+    z-index: 1060;
+    background-color: var(--bs-primary);
+    border: 2px solid var(--bs-primary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-body .btn-primary:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(13, 110, 253, 0.5);
+}
+
+.modal-body .btn-primary i {
+    font-size: 1.2rem;
+    color: white;
+}

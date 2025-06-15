@@ -266,7 +266,10 @@
           <h5 class="modal-title" id="estilosModalLabel">Módulo de Estilos</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body position-relative">
+          <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y me-2" onclick="navegarModal('estilosModal', 'guionesModal')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <div class="row">
             <div class="col-md-6">
               <img src="./assets/animacion-portada.jpeg" class="img-fluid rounded" alt="Estilos">
@@ -298,7 +301,13 @@
           <h5 class="modal-title" id="guionesModalLabel">Módulo de Guiones</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body position-relative">
+          <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y ms-2" onclick="navegarModal('guionesModal', 'estilosModal')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y me-2" onclick="navegarModal('guionesModal', 'produccionModal')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <div class="row">
             <div class="col-md-6">
               <img src="./assets/guiones.jpg" class="img-fluid rounded" alt="Guiones">
@@ -330,7 +339,13 @@
           <h5 class="modal-title" id="produccionModalLabel">Módulo de Producción</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body position-relative">
+          <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y ms-2" onclick="navegarModal('produccionModal', 'guionesModal')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="btn btn-primary position-absolute top-50 end-0 translate-middle-y me-2" onclick="navegarModal('produccionModal', 'edicionModal')">
+            <i class="fas fa-chevron-right"></i>
+          </button>
           <div class="row">
             <div class="col-md-6">
               <img src="./assets/book.jpeg" class="img-fluid rounded" alt="Producción">
@@ -362,7 +377,10 @@
           <h5 class="modal-title" id="edicionModalLabel">Módulo de Edición</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body position-relative">
+          <button class="btn btn-primary position-absolute top-50 start-0 translate-middle-y ms-2" onclick="navegarModal('edicionModal', 'produccionModal')">
+            <i class="fas fa-chevron-left"></i>
+          </button>
           <div class="row">
             <div class="col-md-6">
               <img src="./assets/portata-revista _page-0001.jpg" class="img-fluid rounded" alt="Edición">
@@ -386,6 +404,7 @@
       </div>
     </div>
   </div>
+
 
   <!-- Footer -->
 

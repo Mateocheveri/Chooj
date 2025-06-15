@@ -41,15 +41,48 @@ body{
 
 
 /*CAROUSEL*/
+.carousel {
+    height: 80vh;
+    background-color: #000;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
 .carousel-item img {
-    height: 80vh;
-    object-fit: contain;
+    height: 100%;
     width: 100%;
-    background-attachment: fixed;
-    background-size: cover;
-    
+    object-fit: cover;
 }
+
+.carousel-item video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+}
+
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    bottom: 50px;
+}
+
 .module-grid {
     background-color: #000033;
     color: white;
@@ -466,6 +499,15 @@ footer {
 .footer-header i {
     float: right;
     border: 2px solid red;
+}
+.footer-header i {
+    transition: transform 0.3s ease;
+    border: none !important;
+}
+
+.footer-header i.fa-chevron-down {
+    border: none !important;
+    color: white;
 }
 .footer-links {
     list-style: none;

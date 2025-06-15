@@ -246,4 +246,51 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+/* video corousel */
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const carousel = document.getElementById('mainCarousel');
+  const video = document.querySelector('#video2');
+  
+  // Asegurarse de que el video se reproduzca
+  function playVideo() {
+    video.play().catch(function(error) {
+      console.log("Error reproduciendo el video:", error);
+      // Intentar reproducir nuevamente después de un error
+      setTimeout(playVideo, 1000);
+    });
+  }
+
+  // Intentar reproducir el video cuando esté listo
+  video.addEventListener('loadeddata', function() {
+    playVideo();
+  });
+
+  // Intentar reproducir el video cuando sea visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        playVideo();
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  observer.observe(video);
+
+  // Reproducir el video cuando el usuario interactúe con la página
+  document.addEventListener('click', function() {
+    playVideo();
+  });
+
+  // Manejar la reproducción cuando el video termine
+  video.addEventListener('ended', function() {
+    video.currentTime = 0;
+    playVideo();
+  });
+});
+
+
 

@@ -110,9 +110,17 @@
   </div>
   
   <!-- carrusel -->
-  <div id="mainCarousel" class="carousel slide " data-bs-ride="carousel">
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-inner">
 
-    <div class="carousel-inner ">
+      <div class="carousel-item">
+        <video class="d-block w-100" muted loop id="video2" playsinline>
+          <source src="https://cdn.pixabay.com/video/2016/02/12/2127-155244168_large.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
+      </div>
+      
+
 
       <div class="carousel-item active">
         <img src="./assets/logo prime.png" alt="baner img" />
@@ -124,10 +132,18 @@
         <img src="./assets/camaro.jpg" alt="baner img" />
       </div>
       <div class="carousel-item">
-        <img src="./assets/maquina de texto.jpg" alt="baner img" />
+        <img src="./assets/maquina-de-escribir-2.jpg" alt="baner img" />
       </div>
       <div class="carousel-item">
         <img src="./assets/produccion-2.jpg" alt="baner img" />
+      </div>
+
+
+      <div class="carousel-item active">
+        <video class="d-block w-100" muted loop id="video2" playsinline autoplay>
+          <source src="https://cdn.pixabay.com/video/2019/06/17/24497-344562750_large.mp4" type="video/mp4">
+          Tu navegador no soporta el elemento de video.
+        </video>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
@@ -139,18 +155,18 @@
       <span class="visually-hidden">Next</span>
     </button>
 
-    <div class=" carousel-caption col-sm-12 col-sm-6 col-md-8 col-lg-6    m-auto d-none d-md-block   rounded-5 p-2" >
-      
+    <div class="carousel-caption col-sm-12 col-sm-6 col-md-8 col-lg-6 m-auto d-none d-md-block rounded-5 p-2">
       <h1 style="font-weight:bold;">Comienza tu aventura</h1>
-      <p>Somos Chooj, una plataforma de aprendisaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo basico sobre la elaboracion y finalizacion de un filme profesional. </p>
+      <p>Somos Chooj, una plataforma de aprendisaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo basico sobre la elaboracion y finalizacion de un filme profesional.</p>
       <a class="nav-link" href="./vistas/inicio-sesion.html">
-        <button class="cta btn btn-info text-light   fs-3 ">Comienza tu aventura</button></a>
-    
+        <button class="cta btn btn-info text-light fs-3">Comienza tu aventura</button>
+      </a>
     </div>
-
   </div>
-  <!--  -->
 
+ <!-- script -->
+  
+  
 
   <div class="capsula  container my-5">
     <!--quienes somos-->
@@ -255,48 +271,84 @@
       <div class="row text-white">
         <div class="col-md-4">
           <div class="footer-section">
-            <div class="footer-header">
+            <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#contactoCollapse" role="button" aria-expanded="false">
               CONTACTO
-              <i class="bi bi-caret-down-fill border border-danger "></i>
+              <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="footer-links">
               <li>Nuestros canales de comunicación</li>
               <li>comentarios y sugerencias</li>
               <li>correo@correoemp.com</li>
             </ul>
+            <div class="collapse" id="contactoCollapse">
+              <p class="mt-2">Estamos disponibles para atenderte de lunes a viernes de 8:00 AM a 6:00 PM</p>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="footer-section">
-            <div class="footer-header">
+            <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#nosotrosCollapse" role="button" aria-expanded="false">
               SOBRE NOSOTROS
-              <i class="bi bi-caret-down-fill"></i>
+              <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="footer-links">
               <li>nuestro MOOC</li>
               <li>módulos y referencias</li>
             </ul>
+            <div class="collapse" id="nosotrosCollapse">
+              <p class="mt-2">Somos una plataforma educativa dedicada a la enseñanza del cine y la animación, ofreciendo cursos de alta calidad y contenido actualizado.</p>
+            </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="footer-section">
-            <div class="footer-header">TÈRMINOS Y CONDICIONES</div>
+            <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#terminosCollapse" role="button" aria-expanded="false">
+              TÈRMINOS Y CONDICIONES
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
             <div class="social-icons mt-3">
-              <a href="#" class="text-primary">
+              <a href="#" class="text-white me-3">
                 <i class="fa-brands fa-facebook"></i>
               </a>
-              <a href="#" class="text-danger">
+              <a href="#" class="text-white me-3">
                 <i class="fa-solid fa-circle-play"></i>
               </a>
-              <a href="#" class="text-info">
+              <a href="#" class="text-white">
                 <i class="fa-brands fa-telegram"></i>
               </a>
+            </div>
+            <div class="collapse" id="terminosCollapse">
+              <p class="mt-2">Consulta nuestras políticas de privacidad y términos de uso para conocer más sobre nuestros servicios.</p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </footer>
+
+   <!-- Botón de WhatsApp y Chat -->
+   <div class="whatsapp-button">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div>
+
+<div class="chat-box">
+    <div class="chat-header">
+        <span>Chat de WhatsApp</span>
+        <button class="close-chat">&times;</button>
+    </div>
+    <div class="chat-messages"></div>
+    <div class="chat-input">
+        <input type="text" class="message-input" placeholder="Escribe un mensaje...">
+        <button class="send-message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+        </button>
+    </div>
+</div>
+
+
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
@@ -313,27 +365,9 @@
 
     
 
-    <!-- Botón de WhatsApp y Chat -->
-    <div class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </div>
+    
 
-    <div class="chat-box">
-        <div class="chat-header">
-            <span>Chat de WhatsApp</span>
-            <button class="close-chat">&times;</button>
-        </div>
-        <div class="chat-messages"></div>
-        <div class="chat-input">
-            <input type="text" class="message-input" placeholder="Escribe un mensaje...">
-            <button class="send-message">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-                </svg>
-            </button>
-        </div>
-    </div>
+   
 
  
 </body>

@@ -30,8 +30,19 @@
       .dropdown-toggle{
         color: #06aefc;
       }
-    </style>
+    
 
+    
+      .accordion-header {
+        background-color: transparent !important;
+      }
+      .accordion-button {
+        background-color: transparent !important;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: transparent !important;
+      }
+    </style>
 
 </head>
 
@@ -94,12 +105,18 @@
         <a href="../vistas/dashboard.html" class="btn btn-primary w-100 mb-2">Dashboard</a>
         <a href="./cerrando.html" class="btn btn-outline-danger w-100">Cerrar sesión</a>
   
-        <div class="mod">
+        <div class="mod ">
         <div class="nav-item dropdown py-4">
-            <a class="nav-link  text-center text-dark border-bottom border-dark " >
+            <a class="nav-link  text-center text-dark border-bottom border-dark  " >
               Módulos
             </a>
            
+              <!-- Sección de Inicio -->
+   <!--  <div id="inicio" class="text-center py-4 " style="background-image: url('../assets/banner-style.png') ;
+     background-repeat: no-repeat;background-position: center; object-fit: contain; height:300px; opacity: 50%;">
+      <img src="" class=" col-8 img-top mb-3">
+    </div>
+ -->
   
             <div class="col-md-12 col-lg-12 my-3">
               <div class="card h-100">
@@ -184,17 +201,27 @@
 
   <main class="bg-dark">
 
-    <!-- Sección de Inicio -->
-    <div id="inicio" class="text-center py-4 " style="background-image: url('../assets/banner-style.png') ;
-     background-repeat: no-repeat;background-position: center; object-fit: contain; height:300px; opacity: 50%;">
-      <img src="" class=" col-8 img-top mb-3">
-    </div>
-
+  
     <!-- Sección de Introducción -->
     <div class="ingresovideos  text-center py-4 ">
       <h1 class="fw-bold text-body-dark">ESTILOS</h1>
       <p class="lead col-sm-8 m-auto">Recorrido por las principales tendencias y exponentes del septimo arte, El cine
       </p>
+      
+      <!-- Botones de navegación -->
+      <div class="container  mt-2">
+        <div class="row justify-content-center g-2">
+          <div class="col-lg-4 col-sm-12 col-md-4">
+            <a href="#" class="btn btn-dark border w-100">Anterior Módulo</a>
+          </div>
+          <div class="col-lg-4 col-sm-12 col-md-4">
+            <a href="./dashboard.html" class="btn btn-dark border w-100">Dashboard</a>
+          </div>
+          <div class="col-lg-4 col-sm-12 col-md-4">
+            <a href="#" class="btn btn-dark border w-100">Siguiente Módulo</a>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- <div class="container col-8 mt-2  "> -->
@@ -216,7 +243,7 @@
 
     
 
-    <section class="newModel pb-4 py-5 ">
+    <section class="newModel pb-4 py-1 ">
       <!-- start acordeon model -->
 
       <div id="carouselExample " class="carousel slide " data-bs-ride="false">
@@ -227,13 +254,13 @@
 
           </div>
 
-          <div class="container col-lg-8 col-md-11 pb-2 ">
+          <div class="container col-lg-12 col-md-11 pb-2 ">
 
             <div class="accordion container p-0 col-lg-12 col-md-12 col-sm-12 " id="accordionPanelsStayOpenExample">
               <div class="accordion-item text-light flex-wrap">
                 <div class="nuevocontent">
-                  <h2 class="accordion-header col-12" id="panelsStayOpen-headingOne">
-                    <button class="accordion-button d-flex flex-wrap" type="button" data-bs-toggle="collapse"
+                  <h2 class="accordion-header col-12 border border-danger" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button d-flex flex-wrap show" type="button" data-bs-toggle="collapse"
                       data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                       aria-controls="panelsStayOpen-collapseOne">
                       <div class="otroContent col-12 my-2 ">
@@ -242,7 +269,7 @@
                         <!-- video bar avance -------------------------------------------------------------->                        
                         <div class="video-yt">
                           <!-- Video -->
-                          <video id="miVideo" width="100%" controls>
+                          <video class="border border-info col-lg-12 " id="miVideo" width="100%" controls>
                             <source src="https://cdn.pixabay.com/video/2022/05/22/117723-713302063_large.mp4"
                               type="video/mp4" />
                             Tu navegador no soporta video HTML5.

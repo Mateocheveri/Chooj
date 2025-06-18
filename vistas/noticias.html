@@ -52,56 +52,46 @@
 <body class=" m-0  bd-example m-0  p-0">
 
     
-  <nav class="navbar navbar-expand-lg px-4">
-    <a class="navbar-brand" href="#">
-        <img src="../assets/logolook1.png" width="200px" alt="logo-chooj"/>
+  <nav class="navbar navbar-expand-lg  px-4  ">
+    <a class="navbar-brand" href="#" id="miEnlace">
+        <img src="../assets/logolook2.png" width="200px" alt="logo-chooj"/>
     </a>
     <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            <li id="btnmodulos" class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Módulos
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
-                    <li><a class="dropdown-item" href="../vistas/guiones.html">Guiones</a></li>
-                    <li><a class="dropdown-item" href="../vistas/produccion.html">Producción</a></li>
-                    <li><a class="dropdown-item" href="../vistas/edicion.html">Edición</a></li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./vistas/quienes-somos.html">Nosotros</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Certificación</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="./vistas/noticias.html">Blog</a>
-            </li>
-            <li class="nav-item">
-                <button id="themeToggle" class="btn btn-outline-light">
-                    <i class="fa-solid fa-sun"></i>
-                </button>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="btniniciar" href="./vistas/inicio-sesion.html">
-                    <button class="btn btn-outline-light">Inicio Sesión</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="btnregistro" href="./vistas/registro.html">
-                    <button class="btn btn-outline-light">Registro</button>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a id="ico" class="nav-link" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">
-                    <i class="fa-regular fa-circle-user fs-1"></i>
-                </a>
-            </li>
+    <div class="collapse navbar-collapse text-center " id="navbarNav" >
+        <ul class="navbar-nav  ms-auto p-0 fs-5">
+
+          <li id="btnmodulos" class="nav-item dropdown ">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Modulos
+            </a>
+            <ul class="dropdown-menu  ">
+              <li><a class="dropdown-item" href="../vistas/estilos.html">Estilos</a></li>
+              <li><a class="dropdown-item" href="../vistas/guiones.html">Guiones</a></li>
+              <li><a class="dropdown-item" href="../vistas/produccion.html">Produccion</a></li>
+              <li><a class="dropdown-item" href="../vistas/edicion.html">Edición</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item ">
+            <a class="nav-link " href="../vistas/quienes-somos.html">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Certificación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../vistas/noticias.html">Blog</a>
+          </li>
+          <a class="nav-link" id="btniniciar" href="../vistas/inicio-sesion.html"><button id="btniniciar" class="btn btn-outline-light mx-2">Inicio Sesión</button></a>
+          <a class="nav-link" id="btnregistro"  href="../vistas/registro.html"><button id="btnregistro" class="btn btn-outline-light">Registro</button></a>
+          <li class="nav-item">
+            <!-- Botón para abrir el offcanvas -->
+            <a id="ico" class="nav-link p-0" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUser" aria-controls="offcanvasUser">
+              <i id="ico" class="fa-regular fa-circle-user fs-1 m-0 px-3"></i>
+            </a>
+          </li>
         </ul>
     </div>
   </nav>
@@ -208,55 +198,82 @@
     <!-- INICIO DE SECTION NOTICIAS -->
     <main class="col">
         
-    <div class="container my-5">
-        <h1 class="section-title  animate__animated animate__backInDown animate__tada
-        ">NOTICIAS Y RECOMENDADOS</h1>
-    
-        <!-- Card 1 -->
-        <div class="news-card">
-          <div class="news-image primera ">
-            <img  src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-            alt="" width="20%">
-          </div>
-          <div class="news-body border">
-            <div class="news-author">
-              <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
-              <span>Admin</span>
-              <span class="news-rating">★★★★★</span>
+    <div class="container-fluid my-5">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 sidebar">
+                <div class="d-flex flex-column p-3">
+                    <h3 class="text-center mb-4">Categorías</h3>
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-primary btn-lg">
+                            <i class="fas fa-newspaper me-2"></i>Publicaciones
+                        </button>
+                        <button class="btn btn-primary btn-lg">
+                            <i class="fas fa-book me-2"></i>Revista
+                        </button>
+                    </div>
+                </div>
             </div>
-            <h5 class="news-title">La animación digital: retos y avances</h5>
-            <p class="text-muted">Descubre el mundo de la animación.</p>
-          </div>
-        </div>
-    
-        <!-- Card 2 -->
-        <div class="news-card">
-          <div class="news-image segunda" ></div>
-          <div class="news-body">
-            <div class="news-author">
-              <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
-              <span>Admin</span>
-              <span class="news-rating">★★★★☆</span>
+
+            <!-- Contenido principal -->
+            <div class="col-md-9">
+                <h1 class="section-title text-center animate__animated animate__backInDown animate__tada">Nuestro blog</h1>
+            
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <!-- Card 1 -->
+                    <div class="col">
+                        <div class="news-card h-100">
+                            <div class="news-image primera">
+                                <img src="https://images.pexels.com/photos/66134/pexels-photo-66134.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                                alt="" class="img-fluid">
+                            </div>
+                            <div class="news-body border">
+                                <div class="news-author">
+                                    <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
+                                    <span>Admin</span>
+                                    <span class="news-rating">★★★★★</span>
+                                </div>
+                                <h5 class="news-title">La animación digital: retos y avances</h5>
+                                <p class="text-muted">Descubre el mundo de la animación.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col">
+                        <div class="news-card h-100">
+                            <div class="news-image segunda"></div>
+                            <div class="news-body">
+                                <div class="news-author">
+                                    <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
+                                    <span>Admin</span>
+                                    <span class="news-rating">★★★★☆</span>
+                                </div>
+                                <h5 class="news-title">Nuestra lista de mejores películas</h5>
+                                <p class="text-muted">Conoce las mejores películas de este año.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col">
+                        <div class="news-card h-100">
+                            <div class="news-image tercera"></div>
+                            <div class="news-body">
+                                <div class="news-author">
+                                    <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
+                                    <span>Admin</span>
+                                    <span class="news-rating">★★★★☆</span>
+                                </div>
+                                <h5 class="news-title">Nuestra lista de mejores películas</h5>
+                                <p class="text-muted">Conoce las mejores películas de este año.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h5 class="news-title">Nuestra lista de mejores películas</h5>
-            <p class="text-muted">Conoce las mejores películas de este año.</p>
-          </div>
         </div>
-    
-        <!-- Card 3 -->
-        <div class="news-card">
-          <div class="news-image tercera"></div>
-          <div class="news-body">
-            <div class="news-author">
-              <img src="https://via.placeholder.com/30" alt="author" class="rounded-circle me-2">
-              <span>Admin</span>
-              <span class="news-rating">★★★★☆</span>
-            </div>
-            <h5 class="news-title">Nuestra lista de mejores películas</h5>
-            <p class="text-muted">Conoce las mejores películas de este año.</p>
-          </div>
-        </div>
-      </div>
+    </div>
     <!-- FINAL DE SECTION NOTICIAS -->
 
 </main>

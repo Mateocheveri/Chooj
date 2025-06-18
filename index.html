@@ -17,8 +17,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-
+  <link rel="stylesheet" href="blog-popup.css">
 
 
 </head>
@@ -27,14 +26,14 @@
 
   <nav class="navbar navbar-expand-lg px-4">
     <a class="navbar-brand" href="#">
-        <img src="./assets/logolook1.png" width="200px" alt="logo-chooj"/>
+        <img src="./assets/logoLook2025.png" width="200px" alt="logo-chooj"/>
     </a>
     <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ms-auto d-flex  gap-1">
             <li id="btnmodulos" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Módulos
@@ -58,16 +57,17 @@
             <li class="nav-item">
                 <button id="themeToggle" class="btn btn-outline-light">
                     <i class="fa-solid fa-sun"></i>
+                    
                 </button>
             </li>
-            <li class="nav-item">
+            <li class="nav-item auth-buttons">
                 <a class="nav-link" id="btniniciar" href="./vistas/inicio-sesion.html">
-                    <button class="btn btn-outline-light">Inicio Sesión</button>
+                    <button class="btn btn-outline-light nav-btn">Inicio Sesión</button>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item auth-buttons">
                 <a class="nav-link" id="btnregistro" href="./vistas/registro.html">
-                    <button class="btn btn-outline-light">Registro</button>
+                    <button class="btn btn-outline-light nav-btn">Registro</button>
                 </a>
             </li>
             <li class="nav-item">
@@ -108,21 +108,19 @@
     </div>
     
   </div>
-  <div class="nuevo"></div>
   
   <!-- carrusel -->
-  <div id="mainCarousel" class="carousel slide" data-bs-ride="false">
-    <div class="carousel-inner">
-
-      <div class="carousel-item">
-        <video class="d-block w-100" muted loop id="video2" playsinline>
+  <div id="mainCarousel" class="carousel slide" data-bs-ride="false" style="height: 80vh; background-color: #000; position: relative;">
+    <div class="carousel-inner" style="height: 100%; position: relative;">
+      <div class="carousel-item" style="height: 100%;">
+        <video class="d-block w-100" muted loop id="video2" playsinline style="height: 100%; object-fit: cover;">
           <source src="https://cdn.pixabay.com/video/2016/02/12/2127-155244168_large.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
       
-      <div class="carousel-item active">
-        <img src="./assets/chooj-ico.png" alt="baner img" />
+      <div class="carousel-item" style="height: 100%;">
+        <img src="./assets/logo prime.png" alt="baner img" style="height: 100%; object-fit: cover;"/>
       </div>
       <div class="carousel-item">
         <img src="./assets/animacion.jpeg" alt="baner img" />
@@ -137,13 +135,21 @@
         <img src="./assets/produccion-2.jpg" alt="baner img" />
       </div>
 
-
       <div class="carousel-item active">
         <video class="d-block w-100" muted loop id="video2" playsinline autoplay>
           <source src="https://cdn.pixabay.com/video/2019/06/17/24497-344562750_large.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
+    </div>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+      <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -154,11 +160,11 @@
       <span class="visually-hidden">Next</span>
     </button>
 
-    <div class="carousel-caption col-sm-12 col-sm-6 col-md-8 col-lg-6 m-auto d-none d-md-block rounded-5 p-2">
-      <h1 style="font-weight:bold;">Comienza tu aventura</h1>
-      <p>Somos Chooj, una plataforma de aprendisaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo basico sobre la elaboracion y finalizacion de un filme profesional.</p>
-      <a class="nav-link" href="./vistas/inicio-sesion.html">
-        <button class="cta btn btn-info text-light fs-3">Comienza tu aventura</button>
+    <div class="carousel-caption" >
+      <h1 class="display-4  display-sm-3 display-md-2 ">Comienza el curso</h1>
+      <p class="lead fs-6 fs-sm-5 fs-md-4  flotante">Somos Look, una plataforma de aprendizaje sobre cine y animacion, acompañanos en esta aventura donde aprenderas lo básico sobre la elaboración y finalización de un filme profesional.</p>
+      <a class="nav-link cta-flotante " href="./vistas/inicio-sesion.html">
+        <button class="cta btn btn-info text-white fs-4 fs-sm-3 fs-md-2">Comienza </button>
       </a>
     </div>
   </div>
@@ -171,10 +177,10 @@
     <!--quienes somos-->
     <div class="container-fluid mt-2  d-flex  justify-content-center align-items-center ">
       <div class="row">
-        <div class="nuevoTexto col-md-12 col-sm-12 col-lg-8  ">
-          <div class="col-6 col-md-12 col-lg-8 p-3 m-auto mt-5 align-items-center text-light"
+        <div class="nuevoTexto col-md-12 col-sm-12 col-lg-8   ">
+          <div class=" col-sm-10 col-md-12 col-lg-8 p-3 m-auto mt-5 align-items-center text-light "
             style="padding-left: 30px;">
-            <h2 class="card-title ">¿Quiénes somos?</h2>
+            <h2 class="card-title  ">¿Quiénes somos?</h2>
             <p class="card-text">
               Somos Chooj, una plataforma de aprendisaje sobre cine y la animacion, acompañanos en esta aventura donde
               aprenderas lo basico sobre la elaboracion y finalizacion de un filme.
@@ -192,7 +198,7 @@
     <div class="container-fluid mt-2  d-flex  justify-content-center text-light ">
       <div class="row ">
         <div class="nuevoTexto col-md-12 col-sm-12 col-lg-8 ">
-          <div class="col-6 col-md-12 col-lg-8 p-3 m-auto mt-1 align-items-center ">
+          <div class="col-sm-10 col-md-12 col-lg-8 p-3 m-auto mt-1 align-items-center ">
             <h2 class="card-title">¿Que aprenderás?</h2>
             <p class="card-text">
               Aprendizaje sobre cine y animación, descubrir el arte de contar historias a través de imágenes, sonidos y
@@ -210,11 +216,11 @@
   </div>
   
   
-  <h2 class="text-center text-light">MÓDULOS</h2>
-  <div class="container pb-5">
+  <h2 class="text-center ">MÓDULOS</h2>
+  <div class="container modulos-desc   pb-5">
     <div class="row">
       <div class="col-md-3">
-        <div class="card1" data-bs-toggle="modal" data-bs-target="#estilosModal" style="cursor: pointer;">
+        <div class="card1 " data-bs-toggle="modal" data-bs-target="#estilosModal" style="cursor: pointer;">
           <img src="./assets/animacion-portada.jpeg" id="img" alt="Proyecto 1">
           <div class="intro ">
             <h5 id="title">ESTILOS</h5>
@@ -414,16 +420,16 @@
       <div class="row text-white">
         <div class="col-md-4">
           <div class="footer-section">
-            <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#contactoCollapse" role="button" aria-expanded="false">
-              CONTACTO
+            <div class="footer-header  bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#contactoCollapse" role="button" aria-expanded="false">
+               <span class="w-100">CONTACTO </span> 
               <i class="fa-solid fa-chevron-down"></i>
             </div>
-            <ul class="footer-links">
+            <ul class="footer-links ">
               <li>Nuestros canales de comunicación</li>
               <li>comentarios y sugerencias</li>
-              <li>correo@correoemp.com</li>
+              <li class="correo">correo@correoemp.com</li>
             </ul>
-            <div class="collapse" id="contactoCollapse">
+            <div class="collapse " id="contactoCollapse">
               <p class="mt-2">Estamos disponibles para atenderte de lunes a viernes de 8:00 AM a 6:00 PM</p>
             </div>
           </div>
@@ -431,7 +437,7 @@
         <div class="col-md-4">
           <div class="footer-section">
             <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#nosotrosCollapse" role="button" aria-expanded="false">
-              SOBRE NOSOTROS
+               <span class="w-100">  SOBRE NOSOTROS</span> 
               <i class="fa-solid fa-chevron-down"></i>
             </div>
             <ul class="footer-links">
@@ -446,17 +452,16 @@
         <div class="col-md-4">
           <div class="footer-section">
             <div class="footer-header bg-primary p-2 rounded d-flex justify-content-between align-items-center" data-bs-toggle="collapse" data-bs-target="#terminosCollapse" role="button" aria-expanded="false">
-              TÈRMINOS Y CONDICIONES
-              <i class="fa-solid fa-chevron-down"></i>
+              <span class="w-100"> TÉRMINOS Y CONDICIONES</span>              <i class="fa-solid fa-chevron-down"></i>
             </div>
-            <div class="social-icons mt-3">
-              <a href="#" class="text-white me-3">
-                <i class="fa-brands fa-facebook"></i>
+            <div class=" row social-icons mt-2  ">
+              <a href="#" class="text-white   col-lg-2 col-md-2  col-1 col-sm-1 ">
+                <i class="fa-brands fa-facebook" ></i>
               </a>
-              <a href="#" class="text-white me-3">
+              <a href="#" class="text-white   col-lg-2 col-md-2  col-1 col-sm-1">
                 <i class="fa-solid fa-circle-play"></i>
               </a>
-              <a href="#" class="text-white">
+              <a href="#" class="text-white  col-lg-2 col-md-2  col-1 col-sm-1">
                 <i class="fa-brands fa-telegram"></i>
               </a>
             </div>
@@ -470,8 +475,16 @@
   </footer>
 
    <!-- Botón de WhatsApp y Chat -->
-   <div class="whatsapp-button">
+   <!-- <div class="whatsapp-button">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div> -->
+
+<!-- Ventana emergente del blog -->
+<div class="blog-popup">
+    <a href="./vistas/noticias.html" class="blog-button" >
+        <i class="fa-solid fa-newspaper"></i>
+        Visita el Blog
+    </a>
 </div>
 
 <div class="chat-box">
@@ -505,6 +518,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <script src="blog-popup.js"></script>
 
     
 

@@ -26,6 +26,23 @@ document.addEventListener("DOMContentLoaded", function () {
     btnIniciarSesion.style.display = "block";
 });
 
+ //activacion modal seleccion dashboard
+
+ document.addEventListener('DOMContentLoaded', function() {
+    var btnResumen = document.getElementById('btnResumenDashboard');
+    if (btnResumen) {
+      btnResumen.addEventListener('click', function() {
+        var modal = bootstrap.Modal.getInstance(document.getElementById('modalOpcionesDashboard'));
+        if (modal) modal.hide();
+        var offcanvas = new bootstrap.Offcanvas(document.getElementById('offcanvasUser'));
+        setTimeout(function() {
+          offcanvas.show();
+        }, 300);
+      });
+    }
+  });
+
+
 // Funcionalidad del video y barra de progreso
 document.addEventListener('DOMContentLoaded', function() {
     const video = document.getElementById('miVideo');
@@ -36,7 +53,30 @@ document.addEventListener('DOMContentLoaded', function() {
         function actualizarBarraProgreso(porcentaje) {
             barraProgreso.style.width = porcentaje + '%';
             barraProgreso.setAttribute('aria-valuenow', porcentaje);
-            
+            // Guardar progreso en localStorage para el usuario logueado
+            let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+            for (let i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].logged) {
+                    if (!usuarios[i].progresoGuiones || usuarios[i].progresoGuiones < porcentaje) {
+                        usuarios[i].progresoGuiones = Math.floor(porcentaje);
+                        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+                    }
+                }
+            }
+            // Actualizar barra de la card lateral si existe
+            const barraCard = document.getElementById('progress-guiones-card');
+            if (barraCard) {
+                barraCard.style.width = Math.floor(porcentaje) + '%';
+                barraCard.textContent = Math.floor(porcentaje) + '%';
+                barraCard.setAttribute('aria-valuenow', Math.floor(porcentaje));
+            }
+            // Actualizar barra de dashboard si está abierta
+            const barraDashboard = document.getElementById('progress-guiones-dashboard');
+            if (barraDashboard) {
+                barraDashboard.style.width = Math.floor(porcentaje) + '%';
+                barraDashboard.textContent = Math.floor(porcentaje) + '%';
+                barraDashboard.setAttribute('aria-valuenow', Math.floor(porcentaje));
+            }
             // Si el progreso llega al 100%, mostrar el modal
             if (porcentaje >= 100) {
                 mostrarModalFelicitaciones();
@@ -47,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+
+        
 
         // Eventos del video
         video.addEventListener('timeupdate', () => {
@@ -61,6 +103,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 actualizarBarraProgreso(porcentaje);
             }
         });
+
+           
+
+
 
         // Evento para cuando el video termina
         video.addEventListener('ended', () => {
@@ -109,7 +155,7 @@ function mostrarModalFelicitaciones() {
             const video = document.getElementById('miVideo');
             if (video) {
                 video.currentTime = 0;
-                video.play();
+                video.pause();
             }
         });
     }

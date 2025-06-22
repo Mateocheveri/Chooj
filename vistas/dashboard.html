@@ -418,22 +418,19 @@
 
 
 
-
-
   <!-- info dashboard -->
-  <div class="container-fluid mx-auto p-3 column-gap-2  flex-wrap ">
-    <div class="ejemplo d-flex col-lg-11 col-sm-12 col-md-12 flex-wrap m-auto ">
+  <div class="container-fluid mx-auto p-3 column-gap-2  flex-wrap  ">
+    <div class="ejemplo d-flex col-lg-11 col-sm-12 col-md-12 flex-wrap m-auto  ">
       <div class="info-student col-lg-3  col-md-12  col-sm-12  d-flex my-2    ">
 
         <!-- Barra lateral -->
         <div class=" info-student col-lg-12 col-md-12 col-sm-12 column-gap-3  px-2 rounded-3  ">
-          <ul class="  col-lg-12   list-group  gap-1 bg-dark-subtle p-2  ">
+          <ul class="col-lg-12 list-group  gap-1 bg-dark-subtle p-2  rounded-3">
 
             <li class="list-group-item ">
               
                 
-                  <div class="row justify-content-between align-items-center 
-                  "> 
+          <div class="row justify-content-between align-items-center  "> 
                     
                     <a class="text-decoration-none text-dark  col-lg-7 col-md-4 col-sm-4 " data-bs-toggle="collapse" href="#multiCollapseExample4"
                   role="button" aria-expanded="true" aria-controls="multiCollapseExample4"> MI PERFIL
@@ -451,7 +448,7 @@
               <div class="row ">
                 <div class="col">
                   
-                  <div class="collapse multi-collapse show " id="multiCollapseExample4">
+                  <div class="collapse multi-collapse show  " id="multiCollapseExample4">
                     
 
                     <!-- START  -->
@@ -459,12 +456,12 @@
                     <div class="container">
                       <div class="row profile">
                         <div class="col-md-12 ">
-                          <div class="profile-sidebar   rounded-3 ">
+                          <div class="profile-sidebar  rounded-3 ">
                             <!-- SIDEBAR USERPIC -->
-                            <div class="profile-userpic   text-center  ">
+                            <div class=" image-profile  ">
 
                               <a href="" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil"">
-                              <img src="https://cdn.pixabay.com/photo/2024/10/04/15/22/ai-generated-9096732_1280.jpg" class="img-responsive" alt="imagen user"
+                              <img src="../assets/user-profile-removebg-preview.png" class="img-responsive user-profile" alt="imagen user"
                                style=" width: 100%; " />
                               </a>
                             </div>
@@ -479,14 +476,17 @@
                             </div>
                             <!-- END SIDEBAR USER TITLE -->
                             <!-- SIDEBAR BUTTONS -->
-                            <div class="profile-userbuttons row justify-content-center py-3">
-                              <button type="button" class="col-4 btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
+
+
+
+                            <div class="profile-userbuttons row justify-content-center  py-3  g-2  ">
+                              <button type="button" class="col-lg-4 col-md-6 col-sm-5 btn btn-success btn-sm text-center align-items-center" data-bs-toggle="modal" data-bs-target="#modalEditarPerfil">
                                 Editar
                               </button>
 
 
-                              <a href="./cerrando.html" class="col-5">
-                                <button class="btn-sm btn btn-danger" type="button ">
+                              <a href="./cerrando.html"  
+                                 class="btn-sm col-lg-5 col-md-6 col-sm-5  btn btn-danger border border-dark-subtle" type="button ">
                                   Cerrar sesión
                               </button>
                             </a> 
@@ -511,12 +511,26 @@
               <label for="emailPerfil" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="emailPerfil" placeholder="tu@email.com">
             </div>
+            <!-- Selección de imagen de perfil -->
+            <div class="mb-3">
+              <label class="form-label">Imagen de perfil</label>
+              <div class="d-flex gap-3 justify-content-center align-items-center flex-wrap">
+                <img src="../assets/user-profile-removebg-preview.png" id="imgPerfilActual" class="img-thumbnail perfil-opcion" data-img="../assets/user-profile-removebg-preview.png" style="width: 80px; cursor:pointer; border: 2px solid #0dcaf0;" title="Actual">
+                <img src="https://cdn.pixabay.com/photo/2020/08/03/16/03/woman-5460395_960_720.jpg" id="imgPerfilFemenino" class="img-thumbnail perfil-opcion" data-img="https://cdn.pixabay.com/photo/2020/08/03/16/03/woman-5460395_960_720.jpg" style="width: 80px; cursor:pointer;" title="Femenino">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" id="imgPerfilAleatorio" class="img-thumbnail perfil-opcion" data-img="https://randomuser.me/api/portraits/men/32.jpg" style="width: 80px; cursor:pointer;" title="Aleatorio">
+              </div>
+              <div class="container justify-content-center text-center">
+                <small class="text-muted   m-auto ">Haz clic en una imagen para seleccionarla como tu perfil.</small>
+                
+              </div>
+              
+            </div>
             <!-- Puedes agregar más campos aquí si lo necesitas -->
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="btnCancelarCambiosPerfil">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="btnGuardarCambiosPerfil">Guardar cambios</button>
         </div>
       </div>
     </div>
@@ -554,11 +568,8 @@
                 <div class="col">
                   <div class="collapse multi-collapse" id="multiCollapseExample1">
                     <div class="card card-body">
-                      <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
+                      <ul id="lista-estudiantes" class="justify-content-center  list-group text-center">
+                        <!-- Los estudiantes se cargarán aquí dinámicamente -->
                       </ul>
                     </div>
                   </div>
@@ -572,18 +583,18 @@
 
               <p class="d-inline-flex gap-1 w-100">
                 <a class="text-decoration-none text-dark pt-2 w-100" data-bs-toggle="collapse" href="#multiCollapseExample2"
-                  role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Instructores online</a>
+                  role="button" aria-expanded="false" aria-controls="multiCollapseExample2">Instructores online</a>
 
               </p>
               <div class="row  ">
                 <div class="col">
                   <div class="collapse multi-collapse" id="multiCollapseExample2">
                     <div class="card card-body">
-                      <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
+                      <ul class="list-group">
+                        <li class="list-group-item">Juliana Montoya</li>
+                        <li class="list-group-item">Mateo Rojas</li>
+                        <li class="list-group-item">Sofía Cabrera</li>
+                        <li class="list-group-item">Javier Duarte</li>
                       </ul>
                     </div>
                   </div>
@@ -1160,8 +1171,8 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
               <button id="btncertificado" class="btn btn-success" type="button"><a href="./certificado"
                   style="text-decoration: none; color:white;">certificado</a></button>
               <!-- progreso----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
-              <div class="progreso-test  text-center d-flex py-3 border border-dark-subtle rounded-2">
-                <h1 class="fs-5 pt-2  col-8   mx-2">Tu progreso</h1>
+              <div class="progreso-test  text-center d-flex py-3 border border-dark-subtle rounded-2 my-3 ">
+                <h1 class="fs-5  pt-2  col-8   mx-2">Tu progreso</h1>
                 <p class=" fs-5  col  rounded-3 p-1" id="progreso">0%</p>
 
               </div>
@@ -1238,7 +1249,7 @@ Aprende a coordinar equipos, gestionar recursos y resolver imprevistos para tran
     integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    integrity="sha512-bPs7Ae6pVhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="../js/dashboard.js"></script>
 

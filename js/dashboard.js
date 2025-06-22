@@ -138,3 +138,75 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 });
+
+// Lógica para el modal de edición de perfil
+document.addEventListener('DOMContentLoaded', () => {
+    const modalEditarPerfil = document.getElementById('modalEditarPerfil');
+    if (!modalEditarPerfil) return;
+
+    const btnGuardar = document.getElementById('btnGuardarCambiosPerfil');
+    const btnCancelar = document.getElementById('btnCancelarCambiosPerfil');
+    const opcionesPerfil = document.querySelectorAll('.perfil-opcion');
+    const imagenesPerfil = document.querySelectorAll('.user-profile');
+
+    let originalSrc = '';
+    let seleccionActualSrc = '';
+
+    // Cargar imagen de perfil desde localStorage al iniciar
+    const savedImgSrc = localStorage.getItem('profileImage');
+    if (savedImgSrc) {
+        imagenesPerfil.forEach(img => img.src = savedImgSrc);
+    }
+
+    modalEditarPerfil.addEventListener('show.bs.modal', () => {
+        originalSrc = imagenesPerfil[0].src;
+        seleccionActualSrc = originalSrc;
+        
+        opcionesPerfil.forEach(opcion => {
+            if (opcion.getAttribute('data-img') === originalSrc) {
+                opcion.style.border = '2px solid #0dcaf0';
+            } else {
+                opcion.style.border = '2px solid transparent';
+            }
+        });
+    });
+
+    opcionesPerfil.forEach(opcion => {
+        opcion.addEventListener('click', function() {
+            seleccionActualSrc = this.getAttribute('data-img');
+            
+            // Actualizar borde para feedback visual
+            opcionesPerfil.forEach(o => o.style.border = '2px solid transparent');
+            this.style.border = '2px solid #0dcaf0';
+        });
+    });
+
+    btnGuardar.addEventListener('click', () => {
+        imagenesPerfil.forEach(img => img.src = seleccionActualSrc);
+        localStorage.setItem('profileImage', seleccionActualSrc);
+        const modalInstance = bootstrap.Modal.getInstance(modalEditarPerfil);
+        modalInstance.hide();
+    });
+
+    btnCancelar.addEventListener('click', () => {
+        // No es necesario hacer nada aquí porque no cambiamos la imagen en vivo,
+        // y el data-bs-dismiss="modal" ya cierra el modal.
+        // Al reabrir, se tomará la imagen correcta gracias al evento 'show.bs.modal'.
+    });
+});
+
+// Cargar lista de estudiantes
+document.addEventListener('DOMContentLoaded', () => {
+    const listaEstudiantes = document.getElementById('lista-estudiantes');
+    if (listaEstudiantes) {
+        const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        listaEstudiantes.innerHTML = ''; // Limpiar la lista por si acaso
+
+        usuarios.forEach(usuario => {
+            const li = document.createElement('li');
+            li.textContent = usuario.userName;
+            li.classList.add('list-group-item'); // Para que se vea como los otros items si es necesario
+            listaEstudiantes.appendChild(li);
+        });
+    }
+});

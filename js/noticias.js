@@ -6,13 +6,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const btnRevistas = document.getElementById('btnRevistas');
     const contenedorPublicaciones = document.getElementById('contenedorPublicaciones');
     const contenedorRevistas = document.getElementById('contenedorRevistas');
+    const collapsePublicacionesEl = document.getElementById('listaPublicaciones');
+    const collapseRevistasEl = document.getElementById('listaRevistas');
 
     // Función para mostrar publicaciones
     function mostrarPublicaciones() {
         contenedorPublicaciones.style.display = 'flex';
         contenedorRevistas.style.display = 'none';
-        
-        // Actualizar estilos de los botones
         btnPublicaciones.classList.add('active');
         btnRevistas.classList.remove('active');
     }
@@ -21,24 +21,48 @@ document.addEventListener('DOMContentLoaded', function() {
     function mostrarRevistas() {
         contenedorPublicaciones.style.display = 'none';
         contenedorRevistas.style.display = 'block';
-        
-        // Actualizar estilos de los botones
         btnRevistas.classList.add('active');
         btnPublicaciones.classList.remove('active');
     }
 
+    // Estado de los collapses
+    let publicacionesAbierto = false;
+    let revistasAbierto = false;
+
     // Event listeners para los botones principales
     btnPublicaciones.addEventListener('click', function(e) {
-        // Si el botón ya está activo, solo manejar el collapse
-        if (!btnPublicaciones.classList.contains('active')) {
-            mostrarPublicaciones();
+        mostrarPublicaciones();
+        const collapsePublicaciones = new bootstrap.Collapse(collapsePublicacionesEl, {toggle: false});
+        const collapseRevistas = new bootstrap.Collapse(collapseRevistasEl, {toggle: false});
+        if (!publicacionesAbierto) {
+            collapsePublicaciones.show();
+            publicacionesAbierto = true;
+            // Si el otro está abierto, ciérralo
+            if (revistasAbierto) {
+                collapseRevistas.hide();
+                revistasAbierto = false;
+            }
+        } else {
+            collapsePublicaciones.hide();
+            publicacionesAbierto = false;
         }
     });
 
     btnRevistas.addEventListener('click', function(e) {
-        // Si el botón ya está activo, solo manejar el collapse
-        if (!btnRevistas.classList.contains('active')) {
-            mostrarRevistas();
+        mostrarRevistas();
+        const collapsePublicaciones = new bootstrap.Collapse(collapsePublicacionesEl, {toggle: false});
+        const collapseRevistas = new bootstrap.Collapse(collapseRevistasEl, {toggle: false});
+        if (!revistasAbierto) {
+            collapseRevistas.show();
+            revistasAbierto = true;
+            // Si el otro está abierto, ciérralo
+            if (publicacionesAbierto) {
+                collapsePublicaciones.hide();
+                publicacionesAbierto = false;
+            }
+        } else {
+            collapseRevistas.hide();
+            revistasAbierto = false;
         }
     });
 
@@ -47,26 +71,13 @@ document.addEventListener('DOMContentLoaded', function() {
     enlacesPublicaciones.forEach((enlace) => {
         enlace.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Mostrar publicaciones si no están visibles
             if (contenedorPublicaciones.style.display === 'none') {
                 mostrarPublicaciones();
             }
-            
-            // Obtener el modal correspondiente del atributo data-modal
             const modalId = this.getAttribute('data-modal');
             if (modalId) {
-                // Cerrar el collapse del sidebar
-                const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaPublicaciones'));
-                if (collapse) {
-                    collapse.hide();
-                }
-                
-                // Abrir el modal correspondiente
                 const modal = new bootstrap.Modal(document.getElementById(modalId));
                 modal.show();
-                
-                console.log(`Abriendo modal: ${modalId} para el artículo: ${this.textContent}`);
             }
         });
     });
@@ -76,22 +87,17 @@ document.addEventListener('DOMContentLoaded', function() {
     enlacesRevistas.forEach((enlace, index) => {
         enlace.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Mostrar revistas si no están visibles
             if (contenedorRevistas.style.display === 'none') {
                 mostrarRevistas();
             }
-            
-            console.log(`Clic en revista: ${this.textContent} (índice: ${index})`);
-            
-            // Opcional: cerrar el collapse después del clic
-            const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaRevistas'));
-            if (collapse) {
-                collapse.hide();
-            }
+            // Aquí podrías abrir un modal de revista si lo tuvieras
         });
     });
 
-    // Mostrar publicaciones por defecto al cargar la página
+    // Mostrar publicaciones y abrir su collapse por defecto al cargar la página
     mostrarPublicaciones();
+    const collapsePublicaciones = new bootstrap.Collapse(collapsePublicacionesEl, {toggle: false});
+    collapsePublicaciones.show();
+    publicacionesAbierto = true;
+    revistasAbierto = false;
 });

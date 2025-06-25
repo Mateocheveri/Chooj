@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.getElementById('mainCarousel');
     const video = document.querySelector('#video2');
     const carouselInstance = new bootstrap.Carousel(carousel, {
-        interval: 8000, // Cambia cada 8 segundos
+        interval: 4000, // Cambia cada 8 segundos
         wrap: true,     // Vuelve al inicio después del último slide
         keyboard: true  // Permite navegación con teclado
     });

@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners para los enlaces de la lista de publicaciones
     const enlacesPublicaciones = document.querySelectorAll('#listaPublicaciones a');
-    enlacesPublicaciones.forEach((enlace, index) => {
+    enlacesPublicaciones.forEach((enlace) => {
         enlace.addEventListener('click', function(e) {
             e.preventDefault();
             
@@ -53,13 +53,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 mostrarPublicaciones();
             }
             
-            // Aquí puedes agregar lógica para scroll hacia la card específica
-            console.log(`Clic en: ${this.textContent} (índice: ${index})`);
-            
-            // Opcional: cerrar el collapse después del clic
-            const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaPublicaciones'));
-            if (collapse) {
-                collapse.hide();
+            // Obtener el modal correspondiente del atributo data-modal
+            const modalId = this.getAttribute('data-modal');
+            if (modalId) {
+                // Cerrar el collapse del sidebar
+                const collapse = bootstrap.Collapse.getInstance(document.getElementById('listaPublicaciones'));
+                if (collapse) {
+                    collapse.hide();
+                }
+                
+                // Abrir el modal correspondiente
+                const modal = new bootstrap.Modal(document.getElementById(modalId));
+                modal.show();
+                
+                console.log(`Abriendo modal: ${modalId} para el artículo: ${this.textContent}`);
             }
         });
     });

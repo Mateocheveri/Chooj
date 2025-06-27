@@ -144,48 +144,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.getElementById('mainCarousel');
-    const video = document.querySelector('#video2');
+    // Selecciona todos los videos dentro del carrusel
+    const videos = carousel.querySelectorAll('video');
     const carouselInstance = new bootstrap.Carousel(carousel, {
         interval: 4000, // Cambia cada 8 segundos
         wrap: true,     // Vuelve al inicio después del último slide
         keyboard: true  // Permite navegación con teclado
     });
    
-    // Asegurarse de que el video se reproduzca
-    function playVideo() {
-        video.play().catch(function(error) {
-            console.log("Error reproduciendo el video:", error);
-            // Intentar reproducir nuevamente después de un error
-            setTimeout(playVideo, 1000);
+    // Función para reproducir y ralentizar todos los videos
+    function playVideosRalentizados() {
+        videos.forEach(video => {
+            video.playbackRate = 0.2; // Ralentiza a la mitad de la velocidad
+            video.play().catch(function(error) {
+                console.log("Error reproduciendo el video:", error);
+                setTimeout(() => video.play(), 1000);
+            });
         });
     }
 
-    // Intentar reproducir el video cuando esté listo
-    video.addEventListener('loadeddata', function() {
-        playVideo();
+    // Asegurarse de que los videos se reproduzcan cuando estén listos
+    videos.forEach(video => {
+        video.addEventListener('loadeddata', function() {
+            playVideosRalentizados();
+        });
     });
 
-    // Intentar reproducir el video cuando sea visible
+    // Usar IntersectionObserver para pausar/reproducir según visibilidad
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
+            const video = entry.target;
             if (entry.isIntersecting) {
-                playVideo();
+                video.playbackRate = 0.5;
+                video.play();
             } else {
                 video.pause();
             }
         });
     }, { threshold: 0.5 });
 
-    observer.observe(video);
+    videos.forEach(video => observer.observe(video));
 
-    // Reproducir el video cuando el usuario interactúe con la página
+    // Reproducir los videos cuando el usuario interactúe con la página
     document.addEventListener('click', function() {
-        playVideo();
+        playVideosRalentizados();
     });
 
-    // Cuando el video termine, avanzar al siguiente slide
-    video.addEventListener('ended', function() {
-        carouselInstance.next();
+    // Cuando un video termine, avanzar al siguiente slide
+    videos.forEach(video => {
+        video.addEventListener('ended', function() {
+            carouselInstance.next();
+        });
     });
 
     // Actualizar indicadores activos

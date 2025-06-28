@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para reproducir y ralentizar todos los videos
     function playVideosRalentizados() {
         videos.forEach(video => {
-            video.playbackRate = 0.2; // Ralentiza a la mitad de la velocidad
+            video.playbackRate = 0.9; // Ralentiza a la mitad de la velocidad
             video.play().catch(function(error) {
                 console.log("Error reproduciendo el video:", error);
                 setTimeout(() => video.play(), 1000);

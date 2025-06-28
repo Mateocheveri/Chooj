@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const carousel = document.getElementById('mainCarousel');
     // Selecciona todos los videos dentro del carrusel
     const videos = carousel.querySelectorAll('video');
+    console.log('Videos encontrados en el carrusel:', videos.length);
+    
     const carouselInstance = new bootstrap.Carousel(carousel, {
         interval: 4000, // Cambia cada 8 segundos
         wrap: true,     // Vuelve al inicio después del último slide
@@ -154,19 +156,26 @@ document.addEventListener('DOMContentLoaded', function() {
    
     // Función para reproducir y ralentizar todos los videos
     function playVideosRalentizados() {
-        videos.forEach(video => {
+        videos.forEach((video, index) => {
+            console.log(`Aplicando playbackRate 0.9 al video ${index + 1} (ID: ${video.id})`);
             video.playbackRate = 0.9; // Ralentiza a la mitad de la velocidad
             video.play().catch(function(error) {
-                console.log("Error reproduciendo el video:", error);
+                console.log(`Error reproduciendo el video ${index + 1}:`, error);
                 setTimeout(() => video.play(), 1000);
             });
         });
     }
 
     // Asegurarse de que los videos se reproduzcan cuando estén listos
-    videos.forEach(video => {
+    videos.forEach((video, index) => {
         video.addEventListener('loadeddata', function() {
+            console.log(`Video ${index + 1} (${video.id}) cargado correctamente`);
             playVideosRalentizados();
+        });
+        
+        // Agregar listener para errores de carga
+        video.addEventListener('error', function(e) {
+            console.error(`Error cargando video ${index + 1} (${video.id}):`, e);
         });
     });
 
@@ -175,9 +184,11 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             const video = entry.target;
             if (entry.isIntersecting) {
-                video.playbackRate = 0.5;
+                console.log(`Video ${video.id} visible, reproduciendo...`);
+                video.playbackRate = 0.9;
                 video.play();
             } else {
+                console.log(`Video ${video.id} no visible, pausando...`);
                 video.pause();
             }
         });
@@ -193,6 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Cuando un video termine, avanzar al siguiente slide
     videos.forEach(video => {
         video.addEventListener('ended', function() {
+            console.log(`Video ${video.id} terminado, avanzando al siguiente slide`);
             carouselInstance.next();
         });
     });

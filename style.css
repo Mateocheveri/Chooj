@@ -273,7 +273,7 @@ body{
   [data-theme="light"] {
     --bg-color: #f5f5f5;
     --text-color: #333333;
-    --nav-bg: #01000a;
+    --nav-bg: #000033;
     --card-bg: rgba(64, 99, 255, 0.308);
     --title-color: #000000;
     --paragraph-color: #333333;

@@ -1,6 +1,7 @@
 const form = document.querySelector("#post")
 const usuario = document.querySelector("#nombre")
 const contraseña = document.querySelector("#contra")
+const guestModeButton = document.querySelector("#guestModeButton");
 
 
 
@@ -34,4 +35,37 @@ function usuarioValido(e){
     
 }
 
+// Función para manejar el modo de invitados
+function modoInvitados() {
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    // Crear usuario invitado si no existe
+    const usuarioInvitado = {
+        userName: "Invitado",
+        userPass: "",
+        logged: true
+    };
+
+    // Verificar si ya existe un invitado registrado
+    const existeInvitado = usuarios.some(user => user.userName === "Invitado");
+
+    if (!existeInvitado) {
+        usuarios.push(usuarioInvitado);
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+    }
+
+    // Redirigir al dashboard
+    window.location = "../vistas/dashboard.html";
+}
+
+// Asignar eventos
+form.addEventListener("submit", usuarioValido);
+guestModeButton.addEventListener("click", (e) => {
+    e.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+    modoInvitados();
+});
+
+
+
 form.addEventListener('submit', usuarioValido);
+

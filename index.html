@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CHOOJ-INICIO</title>
+  <title>LOOK-INICIO</title>
   <link rel="shortcut icon" href="./assets/logo prime.png" type="image/x-icon">
   <!-- font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -26,7 +26,7 @@
 
   <nav class="navbar navbar-expand-lg px-4">
     <a class="navbar-brand" href="#">
-        <img src="./assets/logoLook2025.png" width="200px" alt="logo-chooj"/>
+        <img src="./assets/logojuniolook.png" width="200px" alt="logo-chooj"/>
     </a>
     <button class="navbar-toggler" style="color: rgba(245, 222, 179, 0);" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fa-solid fa-bars fs-2 text-info"></i></span>
@@ -110,7 +110,7 @@
   </div>
   
   <!-- carrusel -->
-  <div id="mainCarousel" class="carousel slide" data-bs-ride="true" style="height: 80vh; background-color: #000; position: relative;">
+  <div id="mainCarousel" class="carousel slide " data-bs-ride="true" style="height: 80vh; background-color: #000; position: relative;">
     <div class="carousel-inner" style="height: 100%; position: relative;">
       
       
@@ -131,14 +131,14 @@
       </div>
 
       <div class="carousel-item" style="height: 100%;">
-        <video class="d-block w-100" muted loop id="video2" playsinline style="height: 100%; object-fit: cover;">
-          <source src="./assets/0001-0140.mp4" type="video/mp4">
+        <video class="d-block w-100" muted loop id="video3" playsinline preload="metadata" style="height: 100%; object-fit: cover;">
+          <source src="https://cdn.pixabay.com/video/2016/02/12/2127-155244168_large.mp4 " type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
       <div class="carousel-item active">
-        <video class="d-block w-100" muted loop id="video2" playsinline autoplay>
-          <source src="https://cdn.pixabay.com/video/2016/02/12/2127-155244168_large.mp4" type="video/mp4">
+        <video class="d-block w-100" muted loop id="video2" playsinline autoplay preload="metadata">
+          <source src="https://cdn.pixabay.com/video/2020/12/08/58726-489544206_large.mp4" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
       </div>
@@ -167,6 +167,50 @@
       <a class="nav-link cta-flotante " href="./vistas/inicio-sesion.html">
         <button class="cta btn btn-info text-white fs-4 fs-sm-3 fs-md-2">Comienza </button>
       </a>
+    </div>
+  </div>
+
+  <!-- Bloque de banner móvil para resoluciones <= 1100px -->
+  <div id="baner-movil" class="container-fluid " style="display: none;">
+    <div id="carouselMovil" class="carousel slide " data-bs-ride="carousel" style="height: 80vh; background-color: #000; position: relative;">
+      <div class="carousel-inner" style="height: 100%; position: relative;">
+        <div class="carousel-item active" style="height: 100%;">
+          <img src="./assets/post001.png" alt="banner móvil 1" class="d-block w-100" style="height: 100%; object-fit: contain;"/>
+        </div>
+        <div class="carousel-item" style="height: 100%;">
+          <img src="./assets/post002.png" alt="banner móvil 2" class="d-block w-100" style="height: 100%; object-fit: cover;"/>
+        </div>
+        <div class="carousel-item" style="height: 100%;">
+          <img src="./assets/post003.jpg" alt="banner móvil 3" class="d-block w-100" style="height: 100%; object-fit: cover;"/>
+        </div>
+        <div class="carousel-item" style="height: 100%;">
+          <video class="d-block w-100" style="height: 100%; object-fit: contain;" autoplay loop muted playsinline preload="metadata">
+            <source src="https://videos.pexels.com/video-files/9724549/9724549-uhd_2732_1440_24fps.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+        <div class="carousel-item" style="height: 100%;">
+          <video class="d-block w-100" style="height: 100%; object-fit: cover;" autoplay loop muted playsinline preload="metadata">
+            <source src="https://videos.pexels.com/video-files/9810156/9810156-uhd_2732_1440_25fps.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+          </video>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselMovil" data-bs-slide-to="4" aria-label="Slide 5"></button>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselMovil" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselMovil" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
     </div>
   </div>
 

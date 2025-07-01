@@ -101,52 +101,173 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     let user = JSON.parse(localStorage.getItem("usuarios")) || [];
     let progresoTotal = 0;
+    let modulos = 0;
+    let modulosCompletos = 0;
     for (let i = 0; i < user.length; i++) {
         if (user[i].logged) {
             // Estilos
             const barraEstilos = document.getElementById('progress-estilos-dashboard');
+            const barraEstilosOffcanvas = document.getElementById('progress-estilos-offcanvas');
             let progresoEstilos = user[i].progresoEstilos || 0;
+            if (progresoEstilos >= 20) { modulosCompletos++; progresoEstilos = 20; }
             if (barraEstilos) {
-                barraEstilos.style.width = progresoEstilos + '%';
-                barraEstilos.textContent = progresoEstilos + '%';
-                barraEstilos.setAttribute('aria-valuenow', progresoEstilos);
-                if (progresoEstilos >= 100) progresoTotal += 20;
+                barraEstilos.style.width = progresoEstilos * 5 + '%';
+                barraEstilos.textContent = progresoEstilos * 5 + '%';
+                barraEstilos.setAttribute('aria-valuenow', progresoEstilos * 5);
             }
+            if (barraEstilosOffcanvas) {
+                barraEstilosOffcanvas.style.width = progresoEstilos * 5 + '%';
+                barraEstilosOffcanvas.textContent = progresoEstilos * 5 + '%';
+                barraEstilosOffcanvas.setAttribute('aria-valuenow', progresoEstilos * 5);
+            }
+            progresoTotal += progresoEstilos;
+            modulos++;
             // Guiones
             const barraGuiones = document.getElementById('progress-guiones-dashboard');
+            const barraGuionesOffcanvas = document.getElementById('progress-guiones-offcanvas');
             let progresoGuiones = user[i].progresoGuiones || 0;
+            if (progresoGuiones >= 20) { modulosCompletos++; progresoGuiones = 20; }
             if (barraGuiones) {
-                barraGuiones.style.width = progresoGuiones + '%';
-                barraGuiones.textContent = progresoGuiones + '%';
-                barraGuiones.setAttribute('aria-valuenow', progresoGuiones);
-                if (progresoGuiones >= 100) progresoTotal += 20;
+                barraGuiones.style.width = progresoGuiones * 5 + '%';
+                barraGuiones.textContent = progresoGuiones * 5 + '%';
+                barraGuiones.setAttribute('aria-valuenow', progresoGuiones * 5);
             }
+            if (barraGuionesOffcanvas) {
+                barraGuionesOffcanvas.style.width = progresoGuiones * 5 + '%';
+                barraGuionesOffcanvas.textContent = progresoGuiones * 5 + '%';
+                barraGuionesOffcanvas.setAttribute('aria-valuenow', progresoGuiones * 5);
+            }
+            progresoTotal += progresoGuiones;
+            modulos++;
             // Producción
             const barraProduccion = document.getElementById('progress-produccion-dashboard');
+            const barraProduccionOffcanvas = document.getElementById('progress-produccion-offcanvas');
             let progresoProduccion = user[i].progresoProduccion || 0;
+            if (progresoProduccion >= 20) { modulosCompletos++; progresoProduccion = 20; }
             if (barraProduccion) {
-                barraProduccion.style.width = progresoProduccion + '%';
-                barraProduccion.textContent = progresoProduccion + '%';
-                barraProduccion.setAttribute('aria-valuenow', progresoProduccion);
-                if (progresoProduccion >= 100) progresoTotal += 20;
+                barraProduccion.style.width = progresoProduccion * 5 + '%';
+                barraProduccion.textContent = progresoProduccion * 5 + '%';
+                barraProduccion.setAttribute('aria-valuenow', progresoProduccion * 5);
             }
+            if (barraProduccionOffcanvas) {
+                barraProduccionOffcanvas.style.width = progresoProduccion * 5 + '%';
+                barraProduccionOffcanvas.textContent = progresoProduccion * 5 + '%';
+                barraProduccionOffcanvas.setAttribute('aria-valuenow', progresoProduccion * 5);
+            }
+            progresoTotal += progresoProduccion;
+            modulos++;
             // Edición
             const barraEdicion = document.getElementById('progress-edicion-dashboard');
+            const barraEdicionOffcanvas = document.getElementById('progress-edicion-offcanvas');
             let progresoEdicion = user[i].progresoEdicion || 0;
+            if (progresoEdicion >= 20) { modulosCompletos++; progresoEdicion = 20; }
             if (barraEdicion) {
-                barraEdicion.style.width = progresoEdicion + '%';
-                barraEdicion.textContent = progresoEdicion + '%';
-                barraEdicion.setAttribute('aria-valuenow', progresoEdicion);
-                if (progresoEdicion >= 100) progresoTotal += 20;
+                barraEdicion.style.width = progresoEdicion * 5 + '%';
+                barraEdicion.textContent = progresoEdicion * 5 + '%';
+                barraEdicion.setAttribute('aria-valuenow', progresoEdicion * 5);
             }
-            // Actualizar el progreso total en el dashboard
+            if (barraEdicionOffcanvas) {
+                barraEdicionOffcanvas.style.width = progresoEdicion * 5 + '%';
+                barraEdicionOffcanvas.textContent = progresoEdicion * 5 + '%';
+                barraEdicionOffcanvas.setAttribute('aria-valuenow', progresoEdicion * 5);
+            }
+            progresoTotal += progresoEdicion;
+            modulos++;
+            // Actualizar el progreso total en el dashboard (máximo 80%)
             const progresoElem = document.getElementById('progreso');
-            if (progresoElem) {
-                progresoElem.textContent = progresoTotal + '%';
+            const progresoText = document.getElementById('progreso-text');
+            if (progresoElem && modulos > 0) {
+                let porcentaje = Math.round((progresoTotal / (modulos * 20)) * 80); // máximo 80%
+                const circle = progresoElem;
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                circle.style.strokeDasharray = `${circumference}`;
+                circle.style.strokeDashoffset = `${circumference - (porcentaje / 100) * circumference}`;
+                if (progresoText) progresoText.textContent = porcentaje + '%';
+            }
+            // Habilitar botón de examen solo si todos los módulos están al 20%
+            const btnQuizz = document.getElementById('btnQuizz');
+            if (btnQuizz) {
+                if (modulosCompletos === 4) {
+                    btnQuizz.disabled = false;
+                    btnQuizz.classList.remove('btn-dark');
+                    btnQuizz.classList.add('btn-primary');
+                } else {
+                    btnQuizz.disabled = true;
+                    btnQuizz.classList.remove('btn-primary');
+                    btnQuizz.classList.add('btn-dark');
+                }
             }
         }
     }
 });
+
+// Funciones para actualizar el progreso de cada módulo y sincronizar ambas barras
+function actualizarProgresoEstilos(nuevoProgreso) {
+    actualizarProgresoModulo('progresoEstilos', 'progress-estilos-dashboard', 'progress-estilos-offcanvas', nuevoProgreso);
+}
+function actualizarProgresoGuiones(nuevoProgreso) {
+    actualizarProgresoModulo('progresoGuiones', 'progress-guiones-dashboard', 'progress-guiones-offcanvas', nuevoProgreso);
+}
+function actualizarProgresoProduccion(nuevoProgreso) {
+    actualizarProgresoModulo('progresoProduccion', 'progress-produccion-dashboard', 'progress-produccion-offcanvas', nuevoProgreso);
+}
+function actualizarProgresoEdicion(nuevoProgreso) {
+    actualizarProgresoModulo('progresoEdicion', 'progress-edicion-dashboard', 'progress-edicion-offcanvas', nuevoProgreso);
+}
+
+function actualizarProgresoModulo(key, idDashboard, idOffcanvas, nuevoProgreso) {
+    let user = JSON.parse(localStorage.getItem("usuarios")) || [];
+    for (let i = 0; i < user.length; i++) {
+        if (user[i].logged) {
+            user[i][key] = nuevoProgreso;
+            localStorage.setItem("usuarios", JSON.stringify(user));
+            // Actualizar ambas barras
+            const barraDashboard = document.getElementById(idDashboard);
+            const barraOffcanvas = document.getElementById(idOffcanvas);
+            if (barraDashboard) {
+                barraDashboard.style.width = nuevoProgreso + '%';
+                barraDashboard.textContent = nuevoProgreso + '%';
+                barraDashboard.setAttribute('aria-valuenow', nuevoProgreso);
+            }
+            if (barraOffcanvas) {
+                barraOffcanvas.style.width = nuevoProgreso + '%';
+                barraOffcanvas.textContent = nuevoProgreso + '%';
+                barraOffcanvas.setAttribute('aria-valuenow', nuevoProgreso);
+            }
+            // Actualizar el progreso general
+            actualizarProgresoGeneral();
+            break;
+        }
+    }
+}
+
+function actualizarProgresoGeneral() {
+    let user = JSON.parse(localStorage.getItem("usuarios")) || [];
+    for (let i = 0; i < user.length; i++) {
+        if (user[i].logged) {
+            let total = 0;
+            let modulos = 0;
+            total += user[i].progresoEstilos || 0; modulos++;
+            total += user[i].progresoGuiones || 0; modulos++;
+            total += user[i].progresoProduccion || 0; modulos++;
+            total += user[i].progresoEdicion || 0; modulos++;
+            let promedio = Math.round(total / modulos);
+            const progresoElem = document.getElementById('progreso');
+            const progresoText = document.getElementById('progreso-text');
+            if (progresoElem) {
+                // Progress ring SVG
+                const circle = progresoElem;
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                circle.style.strokeDasharray = `${circumference}`;
+                circle.style.strokeDashoffset = `${circumference - (promedio / 100) * circumference}`;
+                if (progresoText) progresoText.textContent = promedio + '%';
+            }
+            break;
+        }
+    }
+}
 
 // Lógica para el modal de edición de perfil
 document.addEventListener('DOMContentLoaded', () => {

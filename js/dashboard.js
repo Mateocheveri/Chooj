@@ -102,21 +102,23 @@ document.addEventListener("DOMContentLoaded", function () {
     let user = JSON.parse(localStorage.getItem("usuarios")) || [];
     let progresoTotal = 0;
     let modulos = 0;
+    let modulosCompletos = 0;
     for (let i = 0; i < user.length; i++) {
         if (user[i].logged) {
             // Estilos
             const barraEstilos = document.getElementById('progress-estilos-dashboard');
             const barraEstilosOffcanvas = document.getElementById('progress-estilos-offcanvas');
             let progresoEstilos = user[i].progresoEstilos || 0;
+            if (progresoEstilos >= 20) { modulosCompletos++; progresoEstilos = 20; }
             if (barraEstilos) {
-                barraEstilos.style.width = progresoEstilos + '%';
-                barraEstilos.textContent = progresoEstilos + '%';
-                barraEstilos.setAttribute('aria-valuenow', progresoEstilos);
+                barraEstilos.style.width = progresoEstilos * 5 + '%';
+                barraEstilos.textContent = progresoEstilos * 5 + '%';
+                barraEstilos.setAttribute('aria-valuenow', progresoEstilos * 5);
             }
             if (barraEstilosOffcanvas) {
-                barraEstilosOffcanvas.style.width = progresoEstilos + '%';
-                barraEstilosOffcanvas.textContent = progresoEstilos + '%';
-                barraEstilosOffcanvas.setAttribute('aria-valuenow', progresoEstilos);
+                barraEstilosOffcanvas.style.width = progresoEstilos * 5 + '%';
+                barraEstilosOffcanvas.textContent = progresoEstilos * 5 + '%';
+                barraEstilosOffcanvas.setAttribute('aria-valuenow', progresoEstilos * 5);
             }
             progresoTotal += progresoEstilos;
             modulos++;
@@ -124,15 +126,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const barraGuiones = document.getElementById('progress-guiones-dashboard');
             const barraGuionesOffcanvas = document.getElementById('progress-guiones-offcanvas');
             let progresoGuiones = user[i].progresoGuiones || 0;
+            if (progresoGuiones >= 20) { modulosCompletos++; progresoGuiones = 20; }
             if (barraGuiones) {
-                barraGuiones.style.width = progresoGuiones + '%';
-                barraGuiones.textContent = progresoGuiones + '%';
-                barraGuiones.setAttribute('aria-valuenow', progresoGuiones);
+                barraGuiones.style.width = progresoGuiones * 5 + '%';
+                barraGuiones.textContent = progresoGuiones * 5 + '%';
+                barraGuiones.setAttribute('aria-valuenow', progresoGuiones * 5);
             }
             if (barraGuionesOffcanvas) {
-                barraGuionesOffcanvas.style.width = progresoGuiones + '%';
-                barraGuionesOffcanvas.textContent = progresoGuiones + '%';
-                barraGuionesOffcanvas.setAttribute('aria-valuenow', progresoGuiones);
+                barraGuionesOffcanvas.style.width = progresoGuiones * 5 + '%';
+                barraGuionesOffcanvas.textContent = progresoGuiones * 5 + '%';
+                barraGuionesOffcanvas.setAttribute('aria-valuenow', progresoGuiones * 5);
             }
             progresoTotal += progresoGuiones;
             modulos++;
@@ -140,15 +143,16 @@ document.addEventListener("DOMContentLoaded", function () {
             const barraProduccion = document.getElementById('progress-produccion-dashboard');
             const barraProduccionOffcanvas = document.getElementById('progress-produccion-offcanvas');
             let progresoProduccion = user[i].progresoProduccion || 0;
+            if (progresoProduccion >= 20) { modulosCompletos++; progresoProduccion = 20; }
             if (barraProduccion) {
-                barraProduccion.style.width = progresoProduccion + '%';
-                barraProduccion.textContent = progresoProduccion + '%';
-                barraProduccion.setAttribute('aria-valuenow', progresoProduccion);
+                barraProduccion.style.width = progresoProduccion * 5 + '%';
+                barraProduccion.textContent = progresoProduccion * 5 + '%';
+                barraProduccion.setAttribute('aria-valuenow', progresoProduccion * 5);
             }
             if (barraProduccionOffcanvas) {
-                barraProduccionOffcanvas.style.width = progresoProduccion + '%';
-                barraProduccionOffcanvas.textContent = progresoProduccion + '%';
-                barraProduccionOffcanvas.setAttribute('aria-valuenow', progresoProduccion);
+                barraProduccionOffcanvas.style.width = progresoProduccion * 5 + '%';
+                barraProduccionOffcanvas.textContent = progresoProduccion * 5 + '%';
+                barraProduccionOffcanvas.setAttribute('aria-valuenow', progresoProduccion * 5);
             }
             progresoTotal += progresoProduccion;
             modulos++;
@@ -156,30 +160,43 @@ document.addEventListener("DOMContentLoaded", function () {
             const barraEdicion = document.getElementById('progress-edicion-dashboard');
             const barraEdicionOffcanvas = document.getElementById('progress-edicion-offcanvas');
             let progresoEdicion = user[i].progresoEdicion || 0;
+            if (progresoEdicion >= 20) { modulosCompletos++; progresoEdicion = 20; }
             if (barraEdicion) {
-                barraEdicion.style.width = progresoEdicion + '%';
-                barraEdicion.textContent = progresoEdicion + '%';
-                barraEdicion.setAttribute('aria-valuenow', progresoEdicion);
+                barraEdicion.style.width = progresoEdicion * 5 + '%';
+                barraEdicion.textContent = progresoEdicion * 5 + '%';
+                barraEdicion.setAttribute('aria-valuenow', progresoEdicion * 5);
             }
             if (barraEdicionOffcanvas) {
-                barraEdicionOffcanvas.style.width = progresoEdicion + '%';
-                barraEdicionOffcanvas.textContent = progresoEdicion + '%';
-                barraEdicionOffcanvas.setAttribute('aria-valuenow', progresoEdicion);
+                barraEdicionOffcanvas.style.width = progresoEdicion * 5 + '%';
+                barraEdicionOffcanvas.textContent = progresoEdicion * 5 + '%';
+                barraEdicionOffcanvas.setAttribute('aria-valuenow', progresoEdicion * 5);
             }
             progresoTotal += progresoEdicion;
             modulos++;
-            // Actualizar el progreso total en el dashboard (promedio de los 4 módulos)
+            // Actualizar el progreso total en el dashboard (máximo 80%)
             const progresoElem = document.getElementById('progreso');
             const progresoText = document.getElementById('progreso-text');
             if (progresoElem && modulos > 0) {
-                let promedio = Math.round(progresoTotal / modulos);
-                // Progress ring SVG
+                let porcentaje = Math.round((progresoTotal / (modulos * 20)) * 80); // máximo 80%
                 const circle = progresoElem;
                 const radius = circle.r.baseVal.value;
                 const circumference = 2 * Math.PI * radius;
                 circle.style.strokeDasharray = `${circumference}`;
-                circle.style.strokeDashoffset = `${circumference - (promedio / 100) * circumference}`;
-                if (progresoText) progresoText.textContent = promedio + '%';
+                circle.style.strokeDashoffset = `${circumference - (porcentaje / 100) * circumference}`;
+                if (progresoText) progresoText.textContent = porcentaje + '%';
+            }
+            // Habilitar botón de examen solo si todos los módulos están al 20%
+            const btnQuizz = document.getElementById('btnQuizz');
+            if (btnQuizz) {
+                if (modulosCompletos === 4) {
+                    btnQuizz.disabled = false;
+                    btnQuizz.classList.remove('btn-dark');
+                    btnQuizz.classList.add('btn-primary');
+                } else {
+                    btnQuizz.disabled = true;
+                    btnQuizz.classList.remove('btn-primary');
+                    btnQuizz.classList.add('btn-dark');
+                }
             }
         }
     }

@@ -170,9 +170,16 @@ document.addEventListener("DOMContentLoaded", function () {
             modulos++;
             // Actualizar el progreso total en el dashboard (promedio de los 4 módulos)
             const progresoElem = document.getElementById('progreso');
+            const progresoText = document.getElementById('progreso-text');
             if (progresoElem && modulos > 0) {
                 let promedio = Math.round(progresoTotal / modulos);
-                progresoElem.textContent = promedio + '%';
+                // Progress ring SVG
+                const circle = progresoElem;
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                circle.style.strokeDasharray = `${circumference}`;
+                circle.style.strokeDashoffset = `${circumference - (promedio / 100) * circumference}`;
+                if (progresoText) progresoText.textContent = promedio + '%';
             }
         }
     }
@@ -230,8 +237,15 @@ function actualizarProgresoGeneral() {
             total += user[i].progresoEdicion || 0; modulos++;
             let promedio = Math.round(total / modulos);
             const progresoElem = document.getElementById('progreso');
+            const progresoText = document.getElementById('progreso-text');
             if (progresoElem) {
-                progresoElem.textContent = promedio + '%';
+                // Progress ring SVG
+                const circle = progresoElem;
+                const radius = circle.r.baseVal.value;
+                const circumference = 2 * Math.PI * radius;
+                circle.style.strokeDasharray = `${circumference}`;
+                circle.style.strokeDashoffset = `${circumference - (promedio / 100) * circumference}`;
+                if (progresoText) progresoText.textContent = promedio + '%';
             }
             break;
         }

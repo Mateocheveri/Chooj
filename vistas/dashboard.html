@@ -995,8 +995,13 @@
               <!-- progreso----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
               <div class="progreso-test  text-center d-flex py-3 border border-dark-subtle rounded-2 my-3 ">
                 <h1 class="fs-5  pt-2  col-8   mx-2">Tu progreso</h1>
-                <p class=" fs-5  col  rounded-3 p-1" id="progreso">0%</p>
-
+                <div class="col d-flex align-items-center justify-content-center" style="height: 80px;">
+                  <svg id="progress-ring" width="70" height="70">
+                    <circle r="30" cx="35" cy="35" fill="transparent" stroke="#e6e6e6" stroke-width="8"/>
+                    <circle id="progreso" r="30" cx="35" cy="35" fill="transparent" stroke="#0dcaf0" stroke-width="8" stroke-linecap="round" stroke-dasharray="188.4" stroke-dashoffset="188.4"/>
+                    <text id="progreso-text" x="50%" y="50%" text-anchor="middle" dy=".3em" font-size="18" fill="#222">0%</text>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>

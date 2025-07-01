@@ -290,7 +290,50 @@
             <!-- Contenido principal -->
             <div class="col-md-9">
                 <h1 class="section-title text-center animate__animated animate__backInDown animate__tada">Nuestro blog</h1>
-            
+                
+                <!-- Sección de video de introducción Marvel Productions -->
+                <div class="my-4 d-flex justify-content-center">
+                  <div style="max-width: 1800px; width: 100%;">
+                    <div id="carouselVideosMarvel" class="carousel slide" data-bs-interval="false">
+                      <div class="carousel-inner">
+                        <!-- Primer video: Marvel Productions (YouTube) -->
+                        <div class="carousel-item active">
+                          <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/5xH0HfJHsaY" title="Marvel Productions Intro" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                        <!-- Segundo video: Pixabay -->
+                        <div class="carousel-item">
+                          <div class="ratio ratio-16x9">
+                            <video controls>
+                              <source src="../assets/0001-0140.mp4" type="video/mp4">
+                              Tu navegador no soporta la reproducción de video.
+                            </video>
+                          </div>
+                        </div>
+                        <!-- Tercer video: Pixabay -->
+                        <div class="carousel-item">
+                          <div class="ratio ratio-16x9">
+                            <video controls>
+                              <source src="https://cdn.pixabay.com/video/2020/12/08/58726-489544206_large.mp4" type="video/mp4">
+                              Tu navegador no soporta la reproducción de video.
+                            </video>
+                          </div>
+                        </div>
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#carouselVideosMarvel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#carouselVideosMarvel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Siguiente</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- subtitulo publicaciones revista dinamico -->
+                <h2 class="section-title text-center ">Publicaciones </h2>
                 <!-- Contenedor de Publicaciones -->
                 <div id="contenedorPublicaciones" class="row row-cols-1 row-cols-md-2 g-4">
                     <!-- Modal XL para la primera card -->

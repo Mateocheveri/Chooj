@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const contenedorRevistas = document.getElementById('contenedorRevistas');
     const collapsePublicacionesEl = document.getElementById('listaPublicaciones');
     const collapseRevistasEl = document.getElementById('listaRevistas');
+    // Selección robusta del subtítulo dinámico
+    const subtitulo = document.querySelector('main .section-title.text-center:not(.animate__animated)');
+    // Para depuración, puedes quitar este log después
+    if(!subtitulo) console.warn('No se encontró el subtítulo dinámico h2');
 
     // Función para mostrar publicaciones
     function mostrarPublicaciones() {
@@ -15,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contenedorRevistas.style.display = 'none';
         btnPublicaciones.classList.add('active');
         btnRevistas.classList.remove('active');
+        if(subtitulo) subtitulo.textContent = 'Publicaciones';
     }
 
     // Función para mostrar revistas
@@ -23,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         contenedorRevistas.style.display = 'block';
         btnRevistas.classList.add('active');
         btnPublicaciones.classList.remove('active');
+        if(subtitulo) subtitulo.textContent = 'Revista';
     }
 
     // Estado de los collapses

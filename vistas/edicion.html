@@ -73,6 +73,7 @@
     .video-yt.full-width {
       width: 70%;
     }
+    }
 
 
   </style>
@@ -492,8 +493,12 @@
             <div class="collapse multi-collapse" id="multiCollapseExample6">
               <div class="info-video col-10 ">
                 <p>REVIVE</p>
-                <p>Pon a prueba tus conocimientos con ejercicios y retos de edición y postproducción.</p>
-                <p>Resuelve casos prácticos y descubre cómo los editores profesionales enfrentan desafíos creativos y técnicos en el cine.</p>
+                <p>Accede a materiales, ejemplos y recursos descargables para profundizar en la edición y postproducción.</p>
+                <div class="col-lg-12 col-md-8 mb-2 border">
+                  <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalRecursoEdicion">
+                    <span><i class="fa-solid fa-folder-open mx-2"></i></span>Recurso Módulo Edición
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -573,6 +578,30 @@
       <div class="modal-footer justify-content-center">
         <button type="button" class="btn btn-secondary" id="btnQuedarse">Continuar en este módulo</button>
         <a href="./edicion.html" class="btn btn-primary" id="btnSiguienteModulo">Presentar examen</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Recurso Edición -->
+<div class="modal fade" id="modalRecursoEdicion" tabindex="-1" aria-labelledby="modalRecursoEdicionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalRecursoEdicionLabel">Recurso Módulo Edición</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://www.slideshare.net/slideshow/embed_code/key/BzfBiXeiEnMrx9?startSlide=1" class="col-lg-11 col-lg-12 col-md-12 col-12" height="506" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px;max-width: 100%;" allowfullscreen></iframe>
+        <div style="margin-bottom:5px">
+          <strong><a href="https://es.slideshare.net/slideshow/edicion-de-videos/73107787" title="Edicion de videos" target="_blank" class=" text-dark">Edicion de videos</a></strong> from <strong><a href="https://es.slideshare.net/BrayanGuacheta1" target="_blank " class=" text-dark">Brayan Guacheta</a></strong>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://es.slideshare.net/slideshow/edicion-de-videos/73107787" download class="btn btn-success" target="_blank">
+          <i class="fa-solid fa-download me-2"></i>Descargar
+        </a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>

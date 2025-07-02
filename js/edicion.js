@@ -92,25 +92,65 @@ document.addEventListener('DOMContentLoaded', function() {
           // Si el progreso llega al 100%, mostrar el modal
           if (porcentaje >= 100) {
               mostrarModalFelicitaciones();
-              // Habilitar el botón de siguiente módulo
-              const btnSiguienteMod = document.querySelector('.siguienteMod');
-              if (btnSiguienteMod) {
-                  btnSiguienteMod.removeAttribute('disabled');
-              }
           }
       }
+
+      // --- Lógica para habilitar/deshabilitar el botón de examen según progreso general y video ---
+      let videoTerminado = false;
+      function controlarBotonExamen() {
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+        let progresoEstilos = 0, progresoGuiones = 0, progresoProduccion = 0, progresoEdicion = 0;
+        for (let i = 0; i < usuarios.length; i++) {
+          if (usuarios[i].logged) {
+            progresoEstilos = usuarios[i].progresoEstilos || 0;
+            progresoGuiones = usuarios[i].progresoGuiones || 0;
+            progresoProduccion = usuarios[i].progresoProduccion || 0;
+            progresoEdicion = usuarios[i].progresoEdicion || 0;
+            break;
+          }
+        }
+        let promedio = Math.round((progresoEstilos + progresoGuiones + progresoProduccion + progresoEdicion) / 4);
+        const btnSiguienteMod = document.querySelector('.siguienteMod');
+        if (btnSiguienteMod) {
+          if (promedio >= 80 && videoTerminado) {
+            btnSiguienteMod.removeAttribute('disabled');
+            btnSiguienteMod.classList.remove('bg-dark', 'btn-dark');
+            btnSiguienteMod.classList.add('bg-primary');
+            btnSiguienteMod.setAttribute('title', '¡Listo para presentar el examen!');
+          } else {
+            btnSiguienteMod.setAttribute('disabled', '');
+            btnSiguienteMod.classList.add('bg-dark', 'btn-dark');
+            btnSiguienteMod.classList.remove('bg-primary');
+            if (!videoTerminado) {
+              btnSiguienteMod.setAttribute('title', 'Debes ver el video completo para presentar el examen');
+            } else {
+              btnSiguienteMod.setAttribute('title', 'Debes completar al menos el 80% de todos los módulos para presentar el examen');
+            }
+          }
+          if (window.bootstrap) {
+            if (btnSiguienteMod._tooltip) btnSiguienteMod._tooltip.dispose();
+            btnSiguienteMod._tooltip = new bootstrap.Tooltip(btnSiguienteMod);
+          }
+        }
+      }
+      // Bloquear al cargar
+      controlarBotonExamen();
 
       // Eventos del video
       video.addEventListener('timeupdate', () => {
           if (video.duration) {
               const porcentaje = (video.currentTime / video.duration) * 100;
               actualizarBarraProgreso(porcentaje);
+              videoTerminado = false;
+              controlarBotonExamen();
           }
       });
       video.addEventListener('loadedmetadata', () => {
           if (video.duration) {
               const porcentaje = (video.currentTime / video.duration) * 100;
               actualizarBarraProgreso(porcentaje);
+              videoTerminado = false;
+              controlarBotonExamen();
           }
       });
 
@@ -119,19 +159,29 @@ document.addEventListener('DOMContentLoaded', function() {
           barraProgreso.style.width = '100%';
           barraProgreso.setAttribute('aria-valuenow', 100);
           barraProgreso.textContent = '100%';
-          
-          // Activar la bandera en verde
           const bandera = document.querySelector('.bandera i');
           if (bandera) {
               bandera.style.color = '#28a745';
           }
-
-          // Activar el botón de siguiente módulo usando la clase específica
-          const btnSiguienteModulo = document.querySelector('.siguienteMod');
-          if (btnSiguienteModulo) {
-              btnSiguienteModulo.classList.remove('bg-dark');
-              btnSiguienteModulo.classList.add('bg-primary');
-              btnSiguienteModulo.href = './quizz.html';
+          videoTerminado = true;
+          controlarBotonExamen();
+          // Botón del modal
+          const btnPresentarExamenModal = document.getElementById('btnPresentarExamenModal');
+          if (btnPresentarExamenModal) {
+            if (videoTerminado && promedio >= 80) {
+              btnPresentarExamenModal.removeAttribute('disabled');
+              btnPresentarExamenModal.setAttribute('title', '¡Listo para presentar el examen!');
+            } else if (!videoTerminado) {
+              btnPresentarExamenModal.setAttribute('disabled', '');
+              btnPresentarExamenModal.setAttribute('title', 'Debes ver el video completo para presentar el examen');
+            } else {
+              btnPresentarExamenModal.setAttribute('disabled', '');
+              btnPresentarExamenModal.setAttribute('title', 'Debes completar al menos el 80% de todos los módulos para presentar el examen');
+            }
+            if (window.bootstrap) {
+              if (btnPresentarExamenModal._tooltip) btnPresentarExamenModal._tooltip.dispose();
+              btnPresentarExamenModal._tooltip = new bootstrap.Tooltip(btnPresentarExamenModal);
+            }
           }
       });
   }
@@ -167,9 +217,9 @@ function mostrarModalFelicitaciones() {
   }
 
   // El botón de siguiente módulo ya tiene el href configurado en el HTML
-  const btnSiguienteModulo = document.getElementById('btnSiguienteModulo');
-  if (btnSiguienteModulo) {
-      btnSiguienteModulo.addEventListener('click', function() {
+  const btnPresentarExamenModal = document.getElementById('btnPresentarExamenModal');
+  if (btnPresentarExamenModal) {
+      btnPresentarExamenModal.addEventListener('click', function() {
           // La redirección se maneja automáticamente por el href
           modal.hide();
       });

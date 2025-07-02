@@ -762,3 +762,18 @@ font-size: 30px;
  
  
 }
+
+.list-group-item.py-3.rounded-2 > a.text-primary.nav-link {
+    color: #198754 !important; /* success */
+}
+.list-group-item.py-3.rounded-2 > a.text-primary.nav-link:hover {
+    background-color: transparent;
+    color: #198754 !important;
+}
+
+.list-group-item.py-3.rounded-2 > a.text-primary.nav-link.border {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+}

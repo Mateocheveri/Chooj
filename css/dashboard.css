@@ -293,8 +293,8 @@ body {
 
 
 .list-group-item:hover{
-
     background-color: rgb(226, 226, 226);
+    /* No se abre ningún colapsable por hover, solo efecto visual */
 }
 
 

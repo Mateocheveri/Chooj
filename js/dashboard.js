@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     toggles.forEach(function(toggle) {
       const chevron = document.querySelector(toggle.chevron);
       if (chevron) {
-        chevron.addEventListener('mouseenter', function() {
+        chevron.addEventListener('click', function() {
           const collapse = document.querySelector(toggle.icon);
           if (collapse) {
             const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);

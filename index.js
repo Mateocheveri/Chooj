@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Videos encontrados en el carrusel:', videos.length);
     
     const carouselInstance = new bootstrap.Carousel(carousel, {
-        interval: 4000, // Cambia cada 4 segundos
+        interval: 20000, // Cambia cada 20 segundos
         wrap: true,     // Vuelve al inicio después del último slide
         keyboard: true  // Permite navegación con teclado
     });

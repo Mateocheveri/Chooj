@@ -44,7 +44,8 @@
           <h1 class="modal-title fs-5" id="exampleModalLabel">El usuario o la contraseña son incorrectas.</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body text-center">
+          <img src="../assets/beeTriste.png" alt="Abeja triste" id="beeTristeImg" style="max-width: 60%; display: block; margin: 0 auto 10px auto;"/>
           Verifica tu usuario o registrate para iniciar sesion.
         </div>
         <div class="modal-footer">
@@ -55,10 +56,10 @@
     </div>
   </div>
 
-  <div class="bg-white capsula p-5 rounded-5 text-secondary shadow " style="width: 25rem">
+  <div class="bg-white capsula p-4 rounded-5 text-secondary shadow" style="width: 25rem">
     <!-- boton de regreso -->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-      <a href="../index.html"><button type="button" class="btn btn-outline-info"><i class="fa-solid fa-xmark"></i></button></a>
+      <a href="../index.html"><button type="button" class="btn btn-outline-info border m-2"><i class="fa-solid fa-xmark"></i></button></a>
     </div>
     
     <div class="text-center fs-1 fw-bold">INICIAR SESIÓN</div>
@@ -80,11 +81,14 @@
       <button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
         iniciar sesión
       </button>
-  <div class="d-flex gap-1 justify-content-center mt-1">
-    <div>¿Aún no te has registrado?</div>
-    <a href="../vistas/registro.html" class="text-decoration-none text-info fw-semibold">Regístrate</a>
+  <div class=" row d-flex gap-1 justify-content-between mt-3 ">
+    <div class="col ">¿Aún no te has registrado?</div>
+    <a href="../vistas/registro.html" class="col text-decoration-none text-info fw-semibold pt-2 text-end ">Regístrate</a>
   </div>
-  <div class="p-3">
+  <div class=" row d-flex gap-1 justify-content-between mt-3 ">
+    <a id="guestModeButton" class="col text-decoration-none text-info fw-semibold pt-2 text-center"><button class="btn btn-info text-white w-100 mt-4 fw-semibold shadow-sm">Modo de invitados</button></a>
+  </div>
+  <div class="pt-1">
     <div class="border-bottom text-center" style="height: 0.9rem">
       <span class="bg-white px-3">o</span>
     </div>

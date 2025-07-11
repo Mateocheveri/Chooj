@@ -319,6 +319,7 @@ document.getElementById('next-button').addEventListener('click', () => {
 // Evento para enviar el quiz
 document.getElementById('quizForm').addEventListener('submit', (e) => {
     e.preventDefault();
+    capturarRespuestas();
     validarRespuestas(e);
 });
 
